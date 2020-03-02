@@ -1,0 +1,21 @@
+---
+title: "Errors"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r installConflicted}
+# install.packages("conflicted")
+```
+
+```{r libraries}
+library(MASS)
+library(dplyr)
+```
+
+```{r conflicts}
+select(mtcars, "mpg")
+dplyr::select(mtcars, "mpg")
+```
+

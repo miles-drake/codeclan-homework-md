@@ -1,0 +1,34 @@
+---
+title: "Coding, Best Practice"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+Read [the tidyverse style guide](https://style.tidyverse.org/). CodeClan's preference is snake_case. My personal preference is camelCase, or skewer-case for file names and URLs (search engine optimisation reasons).
+
+```{r codeClanPreference}
+my_variable<-0 # Use snake case for variable names
+my_data<-read.csv("file")
+```
+
+```{r libraries}
+# Call libraries first
+# install.packages("tidyverse")
+library(tidyverse)
+```
+
+```{r example}
+big_function(
+  something = "that",
+  requires = "many",
+  arguments = "yo"
+)
+```
+
+```{r styler}
+# install.packages("styler")
+library(styler)
+```
+
+Styler can be accessed through the Addins menu.

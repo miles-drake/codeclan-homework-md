@@ -1,0 +1,66 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+## Part 1
+
+```{r question1.1}
+stock_prices<-c(23,27,23,21,34,24,25,30,37,30)
+day_of_week<-rep(c("Monday","Tuesday","Wednesday","Thursday","Friday"),2)
+```
+
+```{r question1.2}
+day_of_week_factor<-as.factor(day_of_week)
+named_stock_prices<-stock_prices
+names(named_stock_prices)<-day_of_week
+```
+
+```{r question1.3}
+stock_data<-data.frame(stock_prices,day_of_week)
+View(stock_data)
+```
+
+```{r question1.4}
+stock_list<-list("Stock Prices"=stock_prices,"Day of Week"=day_of_week,"Data Frame"=stock_data)
+```
+
+## Part 2
+
+```{r question2.1}
+stock_prices[4]
+stock_prices[5]
+stock_prices[6]
+stock_prices[stock_prices>30]
+```
+
+```{r question2.2}
+stock_data$day_of_week
+stock_data[stock_data$stock_prices>30,]
+stock_data[,1]
+stock_data[3,]
+stock_data[3,1]
+```
+
+```{r question4.1}
+stock_list$`Data Frame`
+```
+
+## Extension
+
+```{r grabTidyQuant}
+# install.packages("tidyquant")
+# install.packages("PerformanceAnalytics")
+library(tidyquant)
+library(dplyr)
+help(package="tidyquant")
+```
+
+```{r useTidyQuant}
+aapl_stock_prices<-tq_get("AAPL", get="stock.prices",from="2020-01-01") # Get stock prices for AAPL (Apple), year 2020 to date
+aapl_stock_prices[,c("date","close")]
+subset(aapl_stock_prices,close>mean(close))
+```
+

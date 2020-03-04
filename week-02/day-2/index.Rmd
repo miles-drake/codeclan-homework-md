@@ -1,0 +1,146 @@
+---
+title: "Connecting to Remote Databases in R"
+subtitle: "Week 02, Day 2; Homework"
+author: "Miles Drake"
+date: 2020-03-03
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+```{r libraries}
+library(keyring)
+library(RPostgreSQL)
+```
+
+# 1 MVP
+
+## 1.1 Local PostgreSQL Connections
+
+```{r}
+keyring_unlock("local")
+local_db <- dbConnect(
+  drv = PostgreSQL(),
+  user = key_get("postgresql_username", keyring = "local"),
+  password = key_get("postgresql_password", keyring = "local"),
+  dbname = "wrestling",
+  host = "localhost"
+)
+keyring_lock("local")
+```
+
+### 1.1.1 List of Wrestlers
+
+```{r}
+dbGetQuery(
+  local_db,
+  "SELECT * FROM wrestlers"
+)
+```
+
+### 1.1.2 Data Types
+
+- id: int
+- born: chr
+- name: chr
+- gender: chr
+- win_percent: dbl
+- total_matches: int
+
+## 1.2 Remote PostgreSQL Connections
+
+```{r}
+keyring_unlock("remote")
+PostgreSQL(max.con = 2) # Set maximum simultaneous connections to 2
+remote_db <- dbConnect(
+  drv = PostgreSQL(),
+  user = key_get("wrestling_username", keyring = "remote"),
+  password = key_get("wrestling_password", keyring = "remote"),
+  dbname = "mvhbdgdk",
+  host = "manny.db.elephantsql.com"
+)
+keyring_lock("remote")
+```
+
+### 1.2.1 List of Wrestlers
+
+```{r}
+dbGetQuery(
+  remote_db,
+  "SELECT * FROM wrestlers"
+)
+```
+
+# 2 Extensions
+
+## 2.1
+
+```{r}
+dbGetQuery(
+  remote_db,
+  "SELECT * FROM wrestlers
+  WHERE born = 'United Kingdom'"
+)
+```
+
+## 2.2
+
+```{r}
+dbGetQuery(
+  remote_db,
+  "SELECT * FROM wrestlers
+  WHERE born = 'Japan'
+  AND total_matches >= 40"
+)
+```
+
+## 2.3
+
+```{r}
+dbGetQuery(
+  remote_db,
+  "SELECT * FROM wrestlers
+  WHERE win_percent BETWEEN 50 AND 60"
+)
+```
+
+## 2.4
+
+```{r}
+dbGetQuery(
+  remote_db,
+  "SELECT * FROM wrestlers
+  WHERE name LIKE 'X%'"
+)
+```
+
+## 2.5
+
+```{r}
+dbGetQuery(
+  remote_db,
+  "SELECT * FROM wrestlers
+  WHERE born LIKE 'I%'"
+)
+```
+
+## 2.6
+
+```{r}
+dbGetQuery(
+  remote_db,
+  "SELECT * FROM wrestlers
+  WHERE born NOT LIKE 'I%'"
+)
+```
+
+```{r}
+# Disconnect from remote_db
+dbDisconnect(conn = remote_db)
+```

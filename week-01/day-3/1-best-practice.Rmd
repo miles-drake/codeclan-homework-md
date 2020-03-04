@@ -1,24 +1,40 @@
 ---
-title: "Coding, Best Practice"
-output: html_notebook
-editor_options: 
-  chunk_output_type: console
+title: "Best Practice"
+subtitle: "Week 01, Day 3; Homework"
+author: "Miles Drake"
+date: 2020-02-26
+output:
+  html_document:
+    number_sections: true
+    toc: true
+    toc_float: true
 ---
 
-Read [the tidyverse style guide](https://style.tidyverse.org/). CodeClan's preference is snake_case. My personal preference is camelCase, or skewer-case for file names and URLs (search engine optimisation reasons).
+# Initialisation
 
-```{r codeClanPreference}
-my_variable<-0 # Use snake case for variable names
-my_data<-read.csv("file")
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(eval = FALSE)
 ```
 
-```{r libraries}
-# Call libraries first
-# install.packages("tidyverse")
+Call libraries first.
+
+```{r libraries, include = FALSE}
+library(styler)
 library(tidyverse)
 ```
 
-```{r example}
+# Tidyverse
+
+Read [the tidyverse style guide](https://style.tidyverse.org/). CodeClan's preference is snake_case.
+
+```{r}
+# Use snake case for variable names
+my_variable <- 0
+my_data <- read.csv("file")
+```
+
+```{r}
 big_function(
   something = "that",
   requires = "many",
@@ -26,9 +42,6 @@ big_function(
 )
 ```
 
-```{r styler}
-# install.packages("styler")
-library(styler)
-```
+# Styler
 
 Styler can be accessed through the Addins menu.

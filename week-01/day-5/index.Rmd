@@ -1,20 +1,28 @@
 ---
-title: "Week 01, Day 5 Homework"
+title: "Conditionals, Functions, and Loops"
+subtitle: "Week 01, Day 5; Homework"
+author: "Miles Drake"
+date: 2020-02-28
 output:
   html_document:
+    number_sections: true
     toc: true
     toc_float: true
 ---
 
-```{r libraries, include=FALSE}
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+```{r libraries, include = FALSE}
 library(dplyr)
 ```
 
-# 2 MVP
+# MVP
 
-## 2.2 `if` Statements and Functions
+## `if` Statements and Functions
 
-### 2.2.1 Algebra
+### Algebra
 
 ```{r}
 m15a4 <- function(input) {
@@ -30,7 +38,7 @@ m15a4(1:10)
 
 #### Thought Exercise: Verbose Output
 
-The following just tests an idea I had about making a function give a "verbose" output. If a user wants to see what function `m15a4` is doing to the input to reach the output, they can use `m15a4_verbose(x, verbose = TRUE)` to get a character output similar to an algebraic expression. 
+The following just tests an idea I had about making a function give a "verbose" output. If a user wants to see what function `m15a4` is doing to the input to reach the output, they can use `m15a4_verbose(x, verbose = TRUE)` to get a character output similar to an algebraic expression.
 
 This is, ultimately, unnecessary because it would be best to include this information in help files. It was good practice, though.
 
@@ -51,7 +59,7 @@ m15a4_verbose <- function(input, verbose = FALSE) {
 m15a4_verbose(1, verbose = TRUE)
 ```
 
-### 2.2.2 Birds
+### Birds
 
 ```{r}
 isBird <- function(input) {
@@ -69,7 +77,7 @@ isBird <- function(input) {
 isBird(list("Duck", "Goose", ":cool-doge:"))
 ```
 
-### 2.2.3 Numbers
+### Numbers
 
 ```{r}
 m10 <- function(input) {
@@ -89,9 +97,9 @@ m10 <- function(input) {
 m10(1)
 ```
 
-## 2.3 `ifelse()`, `recode()`, and `case_when()`
+## `ifelse()`, `recode()`, and `case_when()`
 
-### 2.3.1 Big or Small
+### Big or Small
 
 ```{r}
 big <- list()
@@ -148,7 +156,7 @@ bigSizes$casewhen
 
 My solution for `recode()` works, and it does take all realistic values, but understanding it requires some maths knowledge.
 
-### 2.3.2 Fruity Animals
+### Fruity Animals
 
 ```{r}
 animals <- list()
@@ -198,7 +206,7 @@ fruit <- c("apple", "apple", "banana", "cherry", "cherry")
 fruityAnimals <- list(
   ifelse = animals$ifelse(fruit),
   recode = animals$recode(fruit),
-  casewhen = animals$casewhen(fruit) 
+  casewhen = animals$casewhen(fruit)
 )
 ```
 
@@ -210,7 +218,7 @@ fruityAnimals$casewhen
 
 `recode()` and `case_whee()` are both simple blocks of code, with similar lengths. Of the two, `recode()` is more legible.
 
-### 2.3.3 `power(couples)`
+### `power(couples)`
 
 ```{r}
 ageDifference <- list()
@@ -262,7 +270,7 @@ age <- list(
 ageComparison <- list(
   ifelse = ageDifference$ifelse(age$husband, age$wife),
   recode = ageDifference$recode(age$husband, age$wife),
-  casewhen = ageDifference$casewhen(age$husband, age$wife) 
+  casewhen = ageDifference$casewhen(age$husband, age$wife)
 )
 ```
 
@@ -274,7 +282,7 @@ ageComparison$casewhen
 
 `case_when()` provides the simplest block of code.
 
-## 2.4 Loops
+## Loops
 
 ```{r}
 my_list <- list(
@@ -288,7 +296,7 @@ my_list <- list(
 )
 ```
 
-### 2.4.1 `for`
+### `for`
 
 ```{r}
 forLoop <- function (input){
@@ -304,7 +312,7 @@ forLoop <- function (input){
 forLoop(my_list)
 ```
 
-### 2.4.1 `while`
+### `while`
 
 ```{r}
 whileLoop <- function (input){
@@ -323,7 +331,7 @@ whileLoop <- function (input){
 whileLoop(my_list)
 ```
 
-### 2.4.3 Putting It All Together
+### Putting It All Together
 
 ```{r}
 cWhileLoop <- function (input){
@@ -344,9 +352,9 @@ cWhileLoop <- function (input){
 cWhileLoop(my_list)
 ```
 
-# 3 Extensions: Puzzles
+# Extensions: Puzzles
 
-## 3.1 Multiplication Table
+## Multiplication Table
 
 ```{r}
 matrixLoop <- function (){
@@ -371,7 +379,7 @@ matrixLoop <- function (){
 matrixLoop()
 ```
 
-## 3.2 Art Histogram
+## Art Histogram
 
 ```{r}
 art <- function (vector) {

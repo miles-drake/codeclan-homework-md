@@ -1521,9 +1521,9 @@ div.tocify {
 <pre class="r"><code>library(keyring)
 library(RPostgreSQL)</code></pre>
 <div id="mvp" class="section level1">
-<h1>1 MVP</h1>
+<h1><span class="header-section-number">1</span> MVP</h1>
 <div id="local-postgresql-connections" class="section level2">
-<h2>1.1 Local PostgreSQL Connections</h2>
+<h2><span class="header-section-number">1.1</span> Local PostgreSQL Connections</h2>
 <pre class="r"><code>keyring_unlock(&quot;local&quot;)
 local_db &lt;- dbConnect(
   drv = PostgreSQL(),
@@ -1534,14 +1534,14 @@ local_db &lt;- dbConnect(
 )
 keyring_lock(&quot;local&quot;)</code></pre>
 <div id="list-of-wrestlers" class="section level3">
-<h3>1.1.1 List of Wrestlers</h3>
+<h3><span class="header-section-number">1.1.1</span> List of Wrestlers</h3>
 <pre class="r"><code>dbGetQuery(
   local_db,
   &quot;SELECT * FROM wrestlers&quot;
 )</code></pre>
 </div>
 <div id="data-types" class="section level3">
-<h3>1.1.2 Data Types</h3>
+<h3><span class="header-section-number">1.1.2</span> Data Types</h3>
 <ul>
 <li>id: int</li>
 <li>born: chr</li>
@@ -1553,7 +1553,7 @@ keyring_lock(&quot;local&quot;)</code></pre>
 </div>
 </div>
 <div id="remote-postgresql-connections" class="section level2">
-<h2>1.2 Remote PostgreSQL Connections</h2>
+<h2><span class="header-section-number">1.2</span> Remote PostgreSQL Connections</h2>
 <pre class="r"><code>keyring_unlock(&quot;remote&quot;)
 PostgreSQL(max.con = 2) # Set maximum simultaneous connections to 2
 remote_db &lt;- dbConnect(
@@ -1565,7 +1565,7 @@ remote_db &lt;- dbConnect(
 )
 keyring_lock(&quot;remote&quot;)</code></pre>
 <div id="list-of-wrestlers-1" class="section level3">
-<h3>1.2.1 List of Wrestlers</h3>
+<h3><span class="header-section-number">1.2.1</span> List of Wrestlers</h3>
 <pre class="r"><code>dbGetQuery(
   remote_db,
   &quot;SELECT * FROM wrestlers&quot;
@@ -1574,9 +1574,9 @@ keyring_lock(&quot;remote&quot;)</code></pre>
 </div>
 </div>
 <div id="extensions" class="section level1">
-<h1>2 Extensions</h1>
+<h1><span class="header-section-number">2</span> Extensions</h1>
 <div id="section" class="section level2">
-<h2>2.1</h2>
+<h2><span class="header-section-number">2.1</span> </h2>
 <pre class="r"><code>dbGetQuery(
   remote_db,
   &quot;SELECT * FROM wrestlers
@@ -1584,7 +1584,7 @@ keyring_lock(&quot;remote&quot;)</code></pre>
 )</code></pre>
 </div>
 <div id="section-1" class="section level2">
-<h2>2.2</h2>
+<h2><span class="header-section-number">2.2</span> </h2>
 <pre class="r"><code>dbGetQuery(
   remote_db,
   &quot;SELECT * FROM wrestlers
@@ -1593,7 +1593,7 @@ keyring_lock(&quot;remote&quot;)</code></pre>
 )</code></pre>
 </div>
 <div id="section-2" class="section level2">
-<h2>2.3</h2>
+<h2><span class="header-section-number">2.3</span> </h2>
 <pre class="r"><code>dbGetQuery(
   remote_db,
   &quot;SELECT * FROM wrestlers
@@ -1601,7 +1601,7 @@ keyring_lock(&quot;remote&quot;)</code></pre>
 )</code></pre>
 </div>
 <div id="section-3" class="section level2">
-<h2>2.4</h2>
+<h2><span class="header-section-number">2.4</span> </h2>
 <pre class="r"><code>dbGetQuery(
   remote_db,
   &quot;SELECT * FROM wrestlers
@@ -1609,7 +1609,7 @@ keyring_lock(&quot;remote&quot;)</code></pre>
 )</code></pre>
 </div>
 <div id="section-4" class="section level2">
-<h2>2.5</h2>
+<h2><span class="header-section-number">2.5</span> </h2>
 <pre class="r"><code>dbGetQuery(
   remote_db,
   &quot;SELECT * FROM wrestlers
@@ -1617,7 +1617,7 @@ keyring_lock(&quot;remote&quot;)</code></pre>
 )</code></pre>
 </div>
 <div id="section-5" class="section level2">
-<h2>2.6</h2>
+<h2><span class="header-section-number">2.6</span> </h2>
 <pre class="r"><code>dbGetQuery(
   remote_db,
   &quot;SELECT * FROM wrestlers

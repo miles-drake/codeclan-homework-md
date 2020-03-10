@@ -110,3 +110,55 @@ drink_calories <- as_tibble(
 drink_calories
 ```
 
+##
+
+```{r}
+drinks_grouped <- as_tibble(
+  drink_calories %>%
+    group_by(Beverage_category)
+)
+```
+
+```{r}
+drinks_grouped
+```
+
+##
+
+```{r}
+drinks_summary <- drinks_grouped %>%
+  select(Beverage_prep, Calories) %>%
+  group_by(Beverage_prep) %>%
+  summarise(
+    mean_cal = round(mean(Calories), 2)
+  ) %>%
+  arrange(
+    desc(mean_cal)
+  )
+```
+
+```{r}
+drinks_summary
+```
+
+##
+
+```{r}
+drinks_piped <- drinks %>%
+  select(Beverage_category, Beverage, Beverage_prep, Calories) %>%
+  filter(Beverage_category == "Classic Espresso Drinks") %>%
+  mutate(
+      calorie_diff = Calories - 135
+    ) %>%
+  group_by(Beverage_prep) %>%
+  summarise(
+    mean_cal = round(mean(Calories), 2)
+  ) %>%
+  arrange(
+    desc(mean_cal)
+  )
+```
+
+```{r}
+drinks_piped
+```

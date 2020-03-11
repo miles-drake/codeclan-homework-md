@@ -29,3 +29,10 @@ Classwork and labs are not published on advice of my attorney, [Leonard "J." Cra
   - [Connecting to Remote Databases in R](https://apologyfestival.github.io/codeclan_homework_miles/week-02/day-2/connecting-to-remote-databases.html)
 - **Day 5:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-02/day-5/)
   - [SQL Weekend Homework](https://apologyfestival.github.io/codeclan_homework_miles/week-02/day-5/1-sql.html)
+
+## Week 03
+- **Day 1:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-03/day-1/)
+  - [dplyr](https://apologyfestival.github.io/codeclan_homework_miles/week-02/day-1/1-dplyr.html)
+- **Day 2:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-03/day-2/)
+  - [World Bank Data](https://apologyfestival.github.io/codeclan_homework_miles/week-02/day-2/1-world-bank-data.html): Proportions of deputy positions worldwide that are held by women.
+- **Day 3:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-03/day-3/)

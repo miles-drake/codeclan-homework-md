@@ -32,7 +32,8 @@ Classwork and labs are not published on advice of my attorney, [Leonard "J." Cra
 
 ## Week 03
 - **Day 1:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-03/day-1/)
-  - [dplyr](https://apologyfestival.github.io/codeclan_homework_miles/week-02/day-1/1-dplyr.html)
+  - [dplyr](https://apologyfestival.github.io/codeclan_homework_miles/week-03/day-1/1-dplyr.html)
 - **Day 2:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-03/day-2/)
-  - [World Bank Data](https://apologyfestival.github.io/codeclan_homework_miles/week-02/day-2/1-world-bank-data.html): Proportions of deputy positions worldwide that are held by women.
+  - [World Bank Data](https://apologyfestival.github.io/codeclan_homework_miles/week-03/day-2/1-world-bank-data.html): Proportions of deputy positions worldwide that are held by women.
 - **Day 3:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-03/day-3/)
+  - [Tidyverse Consolidation Homework](https://apologyfestival.github.io/codeclan_homework_miles/week-03/day-3/codeclan-tweets.html): CodeClan Twitter dataset. Tibbles, pipes, summary statistics, and regular expressions.

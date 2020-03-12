@@ -1,0 +1,136 @@
+---
+title: "Tidyverse Consolidation Homework"
+subtitle: "Week 03, Day 3; Homework"
+author: "Miles Drake"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    number_sections: true
+    toc: true
+    toc_float: true
+---
+
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(error = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r libraries}
+library(tidyverse)
+```
+
+# MVP
+
+##
+
+```{r}
+tweets <- read_csv(file("data/code_clan_tweets_utf-8.csv", encoding = "UTF-8"))
+```
+
+```{r}
+nrow(tweets)
+ncol(tweets)
+colnames(tweets)
+```
+
+##
+
+```{r}
+ggplot(tweets) +
+  aes(y = favorite_count) +
+  geom_boxplot()
+```
+
+##
+
+```{r}
+tweets %>% 
+  filter(is_quote == FALSE) %>% 
+  summarise(
+    sum(favorite_count)
+  ) %>% 
+  as.integer()
+```
+
+##
+
+```{r}
+tweets %>% 
+  filter(is_quote == FALSE) %>% 
+  group_by(source) %>% 
+  summarise(
+    mean_retweet_count = mean(retweet_count)
+  ) %>% 
+  arrange(
+    desc(mean_retweet_count),
+    source
+  ) %>% 
+  mutate(
+    mean_retweet_count = round(mean_retweet_count, 2)
+  )
+```
+
+##
+
+```{r}
+tweets %>% 
+  select(
+    media_type,
+    favorite_count
+  ) %>% 
+  mutate(
+    media_type = replace_na(media_type, "text")
+  ) %>% 
+  group_by(media_type) %>% 
+  summarise(
+    total_likes = n()
+  ) %>% 
+  arrange(
+    desc(total_likes)
+  )
+```
+
+##
+
+```{r}
+tweets %>% 
+  select(text) %>% 
+  mutate(
+    character_count = str_length(text)
+  ) %>% 
+  summarise(
+    mean(character_count)
+  ) %>% 
+  as.integer()
+```
+
+##
+
+```{r}
+tweets_info <- read_csv("data/code_clan_info.csv")
+tweets_joined <- inner_join(tweets, tweets_info, by = "tweet_id")
+```
+
+```{r}
+tweets_joined
+```
+
+##
+
+```{r}
+codeclan_hashtags <- tweets_joined %>% 
+  select(
+    tweet_id,
+    hashtags
+  ) %>% 
+  filter(
+    is.na(hashtags) == FALSE
+  ) %>% 
+  mutate(
+    hashtags = str_to_lower(hashtags)
+  )
+```
+
+```{r}
+codeclan_hashtags
+```

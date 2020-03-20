@@ -37,3 +37,11 @@ Classwork and labs are not published on advice of my attorney, [Leonard "J." Cra
   - [World Bank Data](https://apologyfestival.github.io/codeclan_homework_miles/week-03/day-2/1-world-bank-data.html): Proportions of deputy positions worldwide that are held by women.
 - **Day 3:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-03/day-3/)
   - [Tidyverse Consolidation Homework](https://apologyfestival.github.io/codeclan_homework_miles/week-03/day-3/codeclan-tweets.html): CodeClan Twitter dataset. Tibbles, pipes, summary statistics, and regular expressions.
+
+## Week 04
+Week 4 was a project week only, since it coincided with the first week of the coronavirus shutdown.
+[This is the master folder for the week's projects.](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/1-decathlon/)
+
+### Data Sets
+1. **Decathlon:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/1-decathlon/)
+  - [Analysis](https://apologyfestival.github.io/codeclan_homework_miles/week-04/1-decathlon/documentation_and_analysis/decathlon_analysis.html)

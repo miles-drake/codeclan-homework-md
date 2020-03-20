@@ -2789,8 +2789,8 @@ div.tocify {
 </div>
 
 
-<div id="longest-long-jump" class="section level1">
-<h1><span class="header-section-number">1</span> Longest long jump</h1>
+<div id="who-had-the-longest-long-jump-seen-in-the-data" class="section level1">
+<h1><span class="header-section-number">1</span> Who had the longest long jump seen in the data?</h1>
 <pre class="r"><code>decathlon_analysis$long_jump_max &lt;- decathlon_data %&gt;% 
   filter(
     event_name == &quot;Long Jump&quot;
@@ -2810,8 +2810,8 @@ div.tocify {
 </div>
 <p>The longest recorded long jump in this data set was achieved by <strong>Clay</strong>, with a distance of <strong>7.96</strong> m.</p>
 </div>
-<div id="average-100-m-sprint-time" class="section level1">
-<h1><span class="header-section-number">2</span> Average 100 m sprint time</h1>
+<div id="what-was-the-average-100m-time-in-each-competition" class="section level1">
+<h1><span class="header-section-number">2</span> What was the average 100m time in each competition?</h1>
 <pre class="r"><code>decathlon_analysis$average_100m &lt;- decathlon_data %&gt;% 
   filter(
     event_name == &quot;Sprint, 100m&quot;
@@ -2832,8 +2832,8 @@ div.tocify {
 </div>
 <p>The average 100 m sprint time in the <strong>Decastar</strong> was <strong>11.18</strong> s. The average 100 m sprint time in the <strong>Olympics</strong> was <strong>10.92</strong> s.</p>
 </div>
-<div id="highest-total-points-across-competitions" class="section level1">
-<h1><span class="header-section-number">3</span> Highest total points across competitions</h1>
+<div id="who-had-the-highest-total-points-across-both-competitions" class="section level1">
+<h1><span class="header-section-number">3</span> Who had the highest total points across both competitions?</h1>
 <pre class="r"><code>decathlon_analysis$points &lt;- decathlon_data %&gt;% 
   select(
     name,
@@ -2858,9 +2858,9 @@ div.tocify {
 </div>
 <p>The highest total points across both competitions was attained by <strong>Sebrle</strong>, with a total points score of <strong>17,110</strong>.</p>
 </div>
-<div id="shot-put-scores" class="section level1">
-<h1><span class="header-section-number">4</span> Shot put scores</h1>
-<p>We are considering the top three competitors (in each competition, not each event) only.</p>
+<div id="what-was-the-shot-put-scores-for-the-top-three-competitors-in-each-competition" class="section level1">
+<h1><span class="header-section-number">4</span> What was the shot-put scores for the top three competitors in each competition?</h1>
+<p>Note that we are considering the top three competitors (assumed to mean in each competition, not each event) only.</p>
 <pre class="r"><code>decathlon_analysis$shot_put &lt;- decathlon_data %&gt;% 
   filter(
     rank &lt;= 3,
@@ -2883,9 +2883,8 @@ div.tocify {
   </script>
 </div>
 </div>
-<div id="average-points-in-400-m-sprint-groups" class="section level1">
-<h1><span class="header-section-number">5</span> Average points in 400 m sprint groups</h1>
-<p>The final bit of analysis is a bit more complicated. We want to compare the average points for competitors who ran the 400m in less than 50 seconds, against those than ran 400m in more than 50 seconds.</p>
+<div id="what-was-the-average-points-for-competitors-who-ran-the-400m-in-less-than-50-seconds-vs.-those-than-ran-400m-in-more-than-50-seconds" class="section level1">
+<h1><span class="header-section-number">5</span> What was the average points for competitors who ran the 400m in less than 50 seconds vs. those than ran 400m in more than 50 seconds?</h1>
 <pre class="r"><code>decathlon_analysis$fast_sprinter &lt;- decathlon_data %&gt;% 
   filter(
     event_name == &quot;Sprint, 400m&quot;

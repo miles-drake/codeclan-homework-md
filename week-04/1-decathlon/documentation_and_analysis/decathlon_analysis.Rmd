@@ -29,7 +29,7 @@ decathlon_data <- read_csv(
 decathlon_analysis <- list()
 ```
 
-# Longest long jump
+# Who had the longest long jump seen in the data?
 
 ```{r}
 decathlon_analysis$long_jump_max <- decathlon_data %>% 
@@ -50,12 +50,9 @@ decathlon_analysis$long_jump_max <- decathlon_data %>%
 decathlon_analysis$long_jump_max
 ```
 
-The longest recorded long jump in this data set was achieved by
-**`r decathlon_analysis$long_jump_max$name`**,
-with a distance of
-**`r decathlon_analysis$long_jump_max$event_score`** m.
+The longest recorded long jump in this data set was achieved by **`r decathlon_analysis$long_jump_max$name`**, with a distance of **`r decathlon_analysis$long_jump_max$event_score`** m.
 
-# Average 100 m sprint time
+# What was the average 100m time in each competition?
 
 ```{r}
 decathlon_analysis$average_100m <- decathlon_data %>% 
@@ -80,7 +77,7 @@ decathlon_analysis$average_100m
 The average 100 m sprint time in the **`r decathlon_analysis$average_100m$competition[1]`** was **`r decathlon_analysis$average_100m$mean_100m_time[1]`** s.
 The average 100 m sprint time in the **`r decathlon_analysis$average_100m$competition[2]`** was **`r decathlon_analysis$average_100m$mean_100m_time[2]`** s.
 
-# Highest total points across competitions
+# Who had the highest total points across both competitions?
 
 ```{r}
 decathlon_analysis$points <- decathlon_data %>% 
@@ -111,9 +108,9 @@ The highest total points across both competitions was attained by
 with a total points score of
 **`r format(decathlon_analysis$points$total_points, big.mark = ",", big.interval = 3L)`**.
 
-# Shot put scores
+# What was the shot-put scores for the top three competitors in each competition?
 
-We are considering the top three competitors (in each competition, not each event) only.
+Note that we are considering the top three competitors (assumed to mean in each competition, not each event) only.
 
 ```{r}
 decathlon_analysis$shot_put <- decathlon_data %>% 
@@ -138,9 +135,7 @@ decathlon_analysis$shot_put <- decathlon_data %>%
 decathlon_analysis$shot_put
 ```
 
-# Average points in 400 m sprint groups
-
-The final bit of analysis is a bit more complicated. We want to compare the average points for competitors who ran the 400m in less than 50 seconds, against those than ran 400m in more than 50 seconds.
+# What was the average points for competitors who ran the 400m in less than 50 seconds vs. those than ran 400m in more than 50 seconds?
 
 ```{r}
 decathlon_analysis$fast_sprinter <- decathlon_data %>% 

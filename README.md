@@ -43,11 +43,11 @@ Week 4 was a project week only, since it coincided with the first week of the co
 [This is the master folder for the week's projects.](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/1-decathlon/)
 
 ### Data Sets
-1. **Decathlon:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/1-decathlon/)
+- **Decathlon:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/1-decathlon/)
   - [Analysis](https://apologyfestival.github.io/codeclan_homework_miles/week-04/1-decathlon/documentation_and_analysis/decathlon_analysis.html)
-2. **Cake Ingredients:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/2-cake-ingredients/)
-3. **Sea Bird Observations:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/3-sea-bird-observations/)
-4. **Halloween Candy:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/4-halloween-candy/)
-5. **Right Wing Authoritarianism:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/5-right-wing-authoritarianism/)
-6. **Dog Survey:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/6-dog-survey/)
+- **Cake Ingredients:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/2-cake-ingredients/)
+- **Sea Bird Observations:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/3-sea-bird-observations/)
+- **Halloween Candy:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/4-halloween-candy/)
+- **Right Wing Authoritarianism:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/5-right-wing-authoritarianism/)
+- **Dog Survey:** [(Folder)](https://github.com/apologyfestival/codeclan_homework_miles/tree/master/week-04/6-dog-survey/)
   - A survey on dogs, not a survey of dogs.

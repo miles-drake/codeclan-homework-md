@@ -7,6 +7,7 @@ output:
   html_document:
     df_print: paged
     number_sections: true
+    self_contained: no
     toc: true
     toc_float: true
 ---
@@ -202,4 +203,4 @@ backpack %>%
   )
 ```
 
-We see that the paucity of male students who have reported back problems has resulted in very few data points in the male with back problems plot.
+We see that the paucity of male students who have reported back problems has resulted in very few data points in the male with back problems plot. An outlier in the male plot is stretching the length of the plot, though it does not appear to have a notable effect on the data.

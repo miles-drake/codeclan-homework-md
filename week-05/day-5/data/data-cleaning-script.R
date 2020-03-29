@@ -14,7 +14,7 @@ library(tidyr)
 monsters <- read_xlsx("data/raw-data.xlsx")
 monsters_raw <- monsters
 
-# Data cleaning
+# Data cleaning, first pass
 # Clean column names
 monsters <- clean_names(monsters)
 colnames(monsters)[1] <- "summary"
@@ -25,6 +25,8 @@ monsters <- monsters %>%
   )
 
 # Create two new columns, "CR" and "Count"
+# Create a blank list to contain these columns
+new_columns <- NULL
 # Create the initial vector
 headers <-
   monsters %>% 
@@ -34,9 +36,9 @@ headers <-
   ) %>% 
   unlist()
 
-# Create the "challenge ratings" column
+# Create the "CR" column
 # To match the format of the clean data frame, the junk leading and trailing characters must first be excised
-challenge_ratings <- headers %>% 
+new_columns$cr <- headers %>% 
   str_replace_all(
     pattern = " ",
     replacement = ""
@@ -55,15 +57,28 @@ challenge_ratings <- headers %>%
       parse(text = x)
     )
   ) %>% 
-  # Coerce into numeric format
   as.numeric() %>% 
-  # Round to 3 s.f. for sanity
   round(3)
 
+# Create the "count" column
+new_columns$count <- headers %>% 
+  str_replace_all(
+    pattern = " ",
+    replacement = ""
+  ) %>% 
+  str_extract(
+    "\\(n=.*\\)"
+  ) %>% 
+  str_extract(
+    "[0-9]{1,2}"
+  ) %>% 
+  as.numeric()
+
 # To match the format of the clean data frame, each entry must be duplicated once
-challenge_ratings <-
-  c(challenge_ratings, challenge_ratings) %>% 
-  sort()
+new_columns$cr <- c(new_columns$cr, new_columns$cr)
+
+# Coerce new columns list into a data frame
+new_columns <- as.data.frame(new_columns)
 
 # Data cleaning, second pass
 monsters <- 
@@ -75,7 +90,9 @@ monsters <-
   ) %>% 
   mutate(
     # Add challenge rating column
-    cr = challenge_ratings
+    cr = new_columns$cr,
+    # Add count column
+    count = new_columns$count
   ) %>% 
   # Convert into long format by pivoting the data
   pivot_longer(
@@ -85,7 +102,13 @@ monsters <-
   )
 
 # Change column order
-monsters <- monsters[,c(2,3,1,4)]
+monsters <- monsters[,c(
+  "cr",
+  "count",
+  "summary",
+  "statistic",
+  "value"
+)]
 
 # Export to CSV
 write.csv(

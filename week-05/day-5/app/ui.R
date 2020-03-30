@@ -16,19 +16,26 @@ ui <- fluidPage(
     sidebarPanel(
       
       # Checkboxes
+      # Summary statistics
       checkboxGroupInput(
-        inputId = "variable",
-        label = "Select variables:",
+        inputId = "summary",
+        label = "Summary Statistics",
+        choices = c(
+          "Average", "Maximum"
+        ),
+        selected = "Average"
+      ),
+      
+      hr(),
+      
+      # Armour classes (AC)
+      checkboxGroupInput(
+        inputId = "select_ac",
+        label = "Armour Classes (AC)",
         choices = c(
           "AC",
           "Touch",
-          "Flatfooted",
-          "HP",
-          "Initiative",
-          "BAB",
-          "Fortitude",
-          "Reflex",
-          "Will"
+          "Flatfooted"
         ),
         selected = c(
           "AC",
@@ -36,13 +43,26 @@ ui <- fluidPage(
         )
       ),
       
+      # Saving throws
       checkboxGroupInput(
-        inputId = "summary",
-        label = "Select summary statistics:",
+        inputId = "select_saves",
+        label = "Saving Throws",
         choices = c(
-          "Average", "Maximum"
-        ),
-        selected = "Average"
+          "Fortitude",
+          "Reflex",
+          "Will"
+        )
+      ),
+      
+      # Other statistics
+      checkboxGroupInput(
+        inputId = "select_other",
+        label = "Other Statistics",
+        choices = c(
+          "HP",
+          "Initiative",
+          "BAB"
+        )
       )
       
     ),

@@ -7,12 +7,21 @@
 server <- function(input, output){
   
   # Concatenate user input into column names
+  # Concatenate selected variables
+  select_concatenate <- reactive({
+    c(
+      input$select_ac,
+      input$select_saves,
+      input$select_other
+    )
+  })
+  
   # Average values
   selected_average <- reactive({
     if (sum(input$summary == "Average")){
       c(
         paste0(
-          str_to_lower(input$variable),
+          str_to_lower(select_concatenate()),
           "_average"
         )
       )
@@ -24,7 +33,7 @@ server <- function(input, output){
     if (sum(input$summary == "Maximum")){
       c(
         paste0(
-          str_to_lower(input$variable),
+          str_to_lower(select_concatenate()),
           "_max"
         )
       )

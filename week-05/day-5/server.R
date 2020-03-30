@@ -40,7 +40,7 @@ server <- function(input, output){
     }
   })
   
-  # Selected variables
+  # Concatenate the selected average and maximum variable names
   selected_variables <- reactive({
     c(
       selected_average(),
@@ -69,7 +69,18 @@ server <- function(input, output){
           max(input$cr)
         )
       ) %>% 
-      dygraph()
+      dygraph() %>% 
+      dyAxis("x", label = "Challenge Rating (CR)") %>% 
+      dyLegend(
+        labelsDiv = "labels",
+        labelsSeparateLines = TRUE
+      ) %>% 
+      dyOptions(
+        disableZoom = TRUE,
+        drawPoints = TRUE,
+        pointSize = 2,
+        strokeWidth = 2
+      )
     })
   
 }

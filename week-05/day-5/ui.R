@@ -82,7 +82,10 @@ ui <- fluidPage(
     # Interactive line graph
     mainPanel(
       # textOutput("test_selected_variables"),
-      dygraphOutput("dygraph")
+      h3("Monster Statistics Graph"),
+      dygraphOutput("dygraph"),
+      h3("Legend and Mouseover Values"),
+      div(id = "labels")
      )
   
   )

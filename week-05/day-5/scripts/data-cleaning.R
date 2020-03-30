@@ -12,7 +12,7 @@ library(readxl)
 library(stringr)
 library(tidyr)
 
-# Import Excel file and create a copy of the original data for verification
+# Import Excel file and retain a copy of the original data for verification
 monsters <- read_xlsx("data/raw-data.xlsx")
 monsters_raw <- monsters
 

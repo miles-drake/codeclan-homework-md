@@ -56,13 +56,20 @@ server <- function(input, output){
   # Interactive line graph
   output$dygraph <- renderDygraph({
     monsters %>% 
-    select(
-      cr,
-      selected_variables()
-    ) %>% 
-    filter(
-      cr < 20
-    ) %>% 
-    dygraph()
-  })
+      # Only show selected variables
+      select(
+        cr,
+        selected_variables()
+      ) %>% 
+      # Only show selected challenge rating range
+      filter(
+        between(
+          cr,
+          min(input$cr),
+          max(input$cr)
+        )
+      ) %>% 
+      dygraph()
+    })
+  
 }

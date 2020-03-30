@@ -63,6 +63,17 @@ ui <- fluidPage(
           "Initiative",
           "BAB"
         )
+      ),
+      
+      hr(),
+      
+      # Challenge Rating selector
+      sliderInput(
+        inputId = "cr",
+        label = "Challenge Rating (CR)",
+        min = 0,
+        max = max(monsters$cr),
+        value = c(0, 20)
       )
       
     ),

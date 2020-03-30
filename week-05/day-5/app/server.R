@@ -8,7 +8,8 @@ server <- function(input, output){
     output$dygraph <- renderDygraph({
         monsters %>% 
         select(
-          -count
+          cr,
+          input$variable
         ) %>% 
         filter(
             cr < 20

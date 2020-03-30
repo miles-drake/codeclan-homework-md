@@ -5,14 +5,34 @@
 # 2020-03-29
 
 ui <- fluidPage(
+  
+  # Title
+  titlePanel("Dungeons & Dragons v.3.5e Aggregate Monster Statistics"),
+  
+  # Layout
+  sidebarLayout(
     
-    # Title
-    titlePanel("Dungeons & Dragons v.3.5e Aggregate Monster Statistics"),
-    
+    # Sidebar
+    sidebarPanel(
+      
+      # Checkboxes
+      checkboxGroupInput(
+        inputId = "variable",
+        label = "Select variables to show:",
+        choices = variables,
+        selected = c(
+          "ac_average", "ac_max",
+          "touch_average", "touch_max")
+      )
+      
+    ),
+  
     # Main panel
     # Interactive line graph
     mainPanel(
-        dygraphOutput("dygraph")
-    )
-    
+      dygraphOutput("dygraph")
+     )
+  
+  )
+  
 )

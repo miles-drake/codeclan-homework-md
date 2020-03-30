@@ -12,3 +12,6 @@ library(readr)
 
 # Read in CSV data
 monsters <- read_csv("../data/clean-data.csv")
+
+# Fetch column names
+variables <- colnames(monsters)[3:20]

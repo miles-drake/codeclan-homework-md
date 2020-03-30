@@ -74,7 +74,9 @@ ui <- fluidPage(
         min = 0,
         max = max(monsters$cr),
         value = c(0, 20)
-      )
+      ),
+      
+      width = 3
       
     ),
   

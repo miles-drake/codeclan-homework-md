@@ -5,15 +5,55 @@
 # 2020-03-29
 
 server <- function(input, output){
-    output$dygraph <- renderDygraph({
-        monsters %>% 
-        select(
-          cr,
-          input$variable
-        ) %>% 
-        filter(
-            cr < 20
-        ) %>% 
-        dygraph()
-    })
+  
+  # Concatenate user input into column names
+  # Average values
+  selected_average <- reactive({
+    if (sum(input$summary == "Average")){
+      c(
+        paste0(
+          str_to_lower(input$variable),
+          "_average"
+        )
+      )
+    }
+  })
+  
+  # Maximum values
+  selected_max <- reactive({
+    if (sum(input$summary == "Maximum")){
+      c(
+        paste0(
+          str_to_lower(input$variable),
+          "_max"
+        )
+      )
+    }
+  })
+  
+  # Selected variables
+  selected_variables <- reactive({
+    c(
+      selected_average(),
+      selected_max()
+    )
+  })
+  
+  # Output the above code for verification
+  output$test_selected_variables <- renderText({
+    selected_variables()
+  })
+  
+  # Interactive line graph
+  output$dygraph <- renderDygraph({
+    monsters %>% 
+    select(
+      cr,
+      selected_variables()
+    ) %>% 
+    filter(
+      cr < 20
+    ) %>% 
+    dygraph()
+  })
 }

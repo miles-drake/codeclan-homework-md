@@ -9,6 +9,7 @@ library(shiny)
 library(dplyr)
 library(dygraphs)
 library(readr)
+library(stringr)
 
 # Read in CSV data
 monsters <- read_csv("../data/clean-data.csv")

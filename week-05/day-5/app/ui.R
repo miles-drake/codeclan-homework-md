@@ -18,11 +18,31 @@ ui <- fluidPage(
       # Checkboxes
       checkboxGroupInput(
         inputId = "variable",
-        label = "Select variables to show:",
-        choices = variables,
+        label = "Select variables:",
+        choices = c(
+          "AC",
+          "Touch",
+          "Flatfooted",
+          "HP",
+          "Initiative",
+          "BAB",
+          "Fortitude",
+          "Reflex",
+          "Will"
+        ),
         selected = c(
-          "ac_average", "ac_max",
-          "touch_average", "touch_max")
+          "AC",
+          "Touch"
+        )
+      ),
+      
+      checkboxGroupInput(
+        inputId = "summary",
+        label = "Select summary statistics:",
+        choices = c(
+          "Average", "Maximum"
+        ),
+        selected = "Average"
       )
       
     ),
@@ -30,6 +50,7 @@ ui <- fluidPage(
     # Main panel
     # Interactive line graph
     mainPanel(
+      # textOutput("test_selected_variables"),
       dygraphOutput("dygraph")
      )
   

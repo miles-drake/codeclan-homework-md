@@ -1,33 +1,18 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+# d20srd D&D v.3.5e Monster Data
+# UI Logic
+# Week 05, Day 5; Homework
+# Miles Drake
+# 2020-03-29
 
-library(shiny)
-
-# Define UI for application that draws a histogram
-shinyUI(fluidPage(
-
-    # Application title
-    titlePanel("Old Faithful Geyser Data"),
-
-    # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
-        ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-            plotOutput("distPlot")
-        )
+ui <- fluidPage(
+    
+    # Title
+    titlePanel("Dungeons & Dragons v.3.5e Aggregate Monster Statistics"),
+    
+    # Main panel
+    # Interactive line graph
+    mainPanel(
+        dygraphOutput("dygraph")
     )
-))
+    
+)

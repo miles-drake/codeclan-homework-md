@@ -1,11 +1,13 @@
 # d20srd D&D v.3.5e Monster Data
 # Data Cleaning Script
+# Week 05, Day 5; Homework
 # Miles Drake
 # 2020-03-29
 
 # Libraries
 library(dplyr)
 library(janitor)
+library(readr)
 library(readxl)
 library(stringr)
 library(tidyr)
@@ -78,7 +80,8 @@ new_columns$count <- headers %>%
 new_columns$cr <- c(new_columns$cr, new_columns$cr)
 
 # Coerce new columns list into a data frame
-new_columns <- as.data.frame(new_columns)
+new_columns <- as.data.frame(new_columns) %>% 
+  arrange(cr)
 
 # Data cleaning, second pass
 monsters <- 
@@ -94,24 +97,14 @@ monsters <-
     # Add count column
     count = new_columns$count
   ) %>% 
-  # Convert into long format by pivoting the data
-  pivot_longer(
-    cols = hp:will,
-    names_to = "statistic",
-    values_to = "value"
+  # Convert into wide format by pivoting the data
+  pivot_wider(
+    names_from = summary,
+    values_from = hp:will
   )
 
-# Change column order
-monsters <- monsters[,c(
-  "cr",
-  "count",
-  "summary",
-  "statistic",
-  "value"
-)]
-
 # Export to CSV
-write.csv(
+write_csv(
   x = monsters,
-  file = "data/clean-data.csv"
+  path = "data/clean-data.csv"
 )

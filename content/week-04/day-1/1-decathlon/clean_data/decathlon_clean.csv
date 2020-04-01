@@ -1,0 +1,411 @@
+name,rank,points,competition,event_name,event_score
+Sebrle,1,8217,Decastar,"Sprint, 100m",11.04
+Sebrle,1,8217,Decastar,Long Jump,7.58
+Sebrle,1,8217,Decastar,Shot Put,14.83
+Sebrle,1,8217,Decastar,High Jump,2.07
+Sebrle,1,8217,Decastar,"Sprint, 400m",49.81
+Sebrle,1,8217,Decastar,"Hurdle, 100m",14.69
+Sebrle,1,8217,Decastar,Discus,43.75
+Sebrle,1,8217,Decastar,Pole Vault,5.02
+Sebrle,1,8217,Decastar,Javelin,63.19
+Sebrle,1,8217,Decastar,"Sprint, 1500m",291.7
+Clay,2,8122,Decastar,"Sprint, 100m",10.76
+Clay,2,8122,Decastar,Long Jump,7.4
+Clay,2,8122,Decastar,Shot Put,14.26
+Clay,2,8122,Decastar,High Jump,1.86
+Clay,2,8122,Decastar,"Sprint, 400m",49.37
+Clay,2,8122,Decastar,"Hurdle, 100m",14.05
+Clay,2,8122,Decastar,Discus,50.72
+Clay,2,8122,Decastar,Pole Vault,4.92
+Clay,2,8122,Decastar,Javelin,60.15
+Clay,2,8122,Decastar,"Sprint, 1500m",301.5
+Karpov,3,8099,Decastar,"Sprint, 100m",11.02
+Karpov,3,8099,Decastar,Long Jump,7.3
+Karpov,3,8099,Decastar,Shot Put,14.77
+Karpov,3,8099,Decastar,High Jump,2.04
+Karpov,3,8099,Decastar,"Sprint, 400m",48.37
+Karpov,3,8099,Decastar,"Hurdle, 100m",14.09
+Karpov,3,8099,Decastar,Discus,48.95
+Karpov,3,8099,Decastar,Pole Vault,4.92
+Karpov,3,8099,Decastar,Javelin,50.31
+Karpov,3,8099,Decastar,"Sprint, 1500m",300.2
+Bernard,4,8067,Decastar,"Sprint, 100m",11.02
+Bernard,4,8067,Decastar,Long Jump,7.23
+Bernard,4,8067,Decastar,Shot Put,14.25
+Bernard,4,8067,Decastar,High Jump,1.92
+Bernard,4,8067,Decastar,"Sprint, 400m",48.93
+Bernard,4,8067,Decastar,"Hurdle, 100m",14.99
+Bernard,4,8067,Decastar,Discus,40.87
+Bernard,4,8067,Decastar,Pole Vault,5.32
+Bernard,4,8067,Decastar,Javelin,62.77
+Bernard,4,8067,Decastar,"Sprint, 1500m",280.1
+Yurkov,5,8036,Decastar,"Sprint, 100m",11.34
+Yurkov,5,8036,Decastar,Long Jump,7.09
+Yurkov,5,8036,Decastar,Shot Put,15.19
+Yurkov,5,8036,Decastar,High Jump,2.1
+Yurkov,5,8036,Decastar,"Sprint, 400m",50.42
+Yurkov,5,8036,Decastar,"Hurdle, 100m",15.31
+Yurkov,5,8036,Decastar,Discus,46.26
+Yurkov,5,8036,Decastar,Pole Vault,4.72
+Yurkov,5,8036,Decastar,Javelin,63.44
+Yurkov,5,8036,Decastar,"Sprint, 1500m",276.4
+Warners,6,8030,Decastar,"Sprint, 100m",11.11
+Warners,6,8030,Decastar,Long Jump,7.6
+Warners,6,8030,Decastar,Shot Put,14.31
+Warners,6,8030,Decastar,High Jump,1.98
+Warners,6,8030,Decastar,"Sprint, 400m",48.68
+Warners,6,8030,Decastar,"Hurdle, 100m",14.23
+Warners,6,8030,Decastar,Discus,41.1
+Warners,6,8030,Decastar,Pole Vault,4.92
+Warners,6,8030,Decastar,Javelin,51.77
+Warners,6,8030,Decastar,"Sprint, 1500m",278.1
+Zsivoczky,7,8004,Decastar,"Sprint, 100m",11.13
+Zsivoczky,7,8004,Decastar,Long Jump,7.3
+Zsivoczky,7,8004,Decastar,Shot Put,13.48
+Zsivoczky,7,8004,Decastar,High Jump,2.01
+Zsivoczky,7,8004,Decastar,"Sprint, 400m",48.62
+Zsivoczky,7,8004,Decastar,"Hurdle, 100m",14.17
+Zsivoczky,7,8004,Decastar,Discus,45.67
+Zsivoczky,7,8004,Decastar,Pole Vault,4.42
+Zsivoczky,7,8004,Decastar,Javelin,55.37
+Zsivoczky,7,8004,Decastar,"Sprint, 1500m",268
+McMullen,8,7995,Decastar,"Sprint, 100m",10.83
+McMullen,8,7995,Decastar,Long Jump,7.31
+McMullen,8,7995,Decastar,Shot Put,13.76
+McMullen,8,7995,Decastar,High Jump,2.13
+McMullen,8,7995,Decastar,"Sprint, 400m",49.91
+McMullen,8,7995,Decastar,"Hurdle, 100m",14.38
+McMullen,8,7995,Decastar,Discus,44.41
+McMullen,8,7995,Decastar,Pole Vault,4.42
+McMullen,8,7995,Decastar,Javelin,56.37
+McMullen,8,7995,Decastar,"Sprint, 1500m",285.1
+Martineau,9,7802,Decastar,"Sprint, 100m",11.64
+Martineau,9,7802,Decastar,Long Jump,6.81
+Martineau,9,7802,Decastar,Shot Put,14.57
+Martineau,9,7802,Decastar,High Jump,1.95
+Martineau,9,7802,Decastar,"Sprint, 400m",50.14
+Martineau,9,7802,Decastar,"Hurdle, 100m",14.93
+Martineau,9,7802,Decastar,Discus,47.6
+Martineau,9,7802,Decastar,Pole Vault,4.92
+Martineau,9,7802,Decastar,Javelin,52.33
+Martineau,9,7802,Decastar,"Sprint, 1500m",262.1
+Hernu,10,7733,Decastar,"Sprint, 100m",11.37
+Hernu,10,7733,Decastar,Long Jump,7.56
+Hernu,10,7733,Decastar,Shot Put,14.41
+Hernu,10,7733,Decastar,High Jump,1.86
+Hernu,10,7733,Decastar,"Sprint, 400m",51.1
+Hernu,10,7733,Decastar,"Hurdle, 100m",15.06
+Hernu,10,7733,Decastar,Discus,44.99
+Hernu,10,7733,Decastar,Pole Vault,4.82
+Hernu,10,7733,Decastar,Javelin,57.19
+Hernu,10,7733,Decastar,"Sprint, 1500m",285.1
+Barras,11,7708,Decastar,"Sprint, 100m",11.33
+Barras,11,7708,Decastar,Long Jump,6.97
+Barras,11,7708,Decastar,Shot Put,14.09
+Barras,11,7708,Decastar,High Jump,1.95
+Barras,11,7708,Decastar,"Sprint, 400m",49.48
+Barras,11,7708,Decastar,"Hurdle, 100m",14.48
+Barras,11,7708,Decastar,Discus,42.1
+Barras,11,7708,Decastar,Pole Vault,4.72
+Barras,11,7708,Decastar,Javelin,55.4
+Barras,11,7708,Decastar,"Sprint, 1500m",282
+Nool,12,7651,Decastar,"Sprint, 100m",11.33
+Nool,12,7651,Decastar,Long Jump,7.27
+Nool,12,7651,Decastar,Shot Put,12.68
+Nool,12,7651,Decastar,High Jump,1.98
+Nool,12,7651,Decastar,"Sprint, 400m",49.2
+Nool,12,7651,Decastar,"Hurdle, 100m",15.29
+Nool,12,7651,Decastar,Discus,37.92
+Nool,12,7651,Decastar,Pole Vault,4.62
+Nool,12,7651,Decastar,Javelin,57.44
+Nool,12,7651,Decastar,"Sprint, 1500m",266.6
+Bourguignon,13,7313,Decastar,"Sprint, 100m",11.36
+Bourguignon,13,7313,Decastar,Long Jump,6.8
+Bourguignon,13,7313,Decastar,Shot Put,13.46
+Bourguignon,13,7313,Decastar,High Jump,1.86
+Bourguignon,13,7313,Decastar,"Sprint, 400m",51.16
+Bourguignon,13,7313,Decastar,"Hurdle, 100m",15.67
+Bourguignon,13,7313,Decastar,Discus,40.49
+Bourguignon,13,7313,Decastar,Pole Vault,5.02
+Bourguignon,13,7313,Decastar,Javelin,54.68
+Bourguignon,13,7313,Decastar,"Sprint, 1500m",291.7
+Sebrle,1,8893,Olympics,"Sprint, 100m",10.85
+Sebrle,1,8893,Olympics,Long Jump,7.84
+Sebrle,1,8893,Olympics,Shot Put,16.36
+Sebrle,1,8893,Olympics,High Jump,2.12
+Sebrle,1,8893,Olympics,"Sprint, 400m",48.36
+Sebrle,1,8893,Olympics,"Hurdle, 100m",14.05
+Sebrle,1,8893,Olympics,Discus,48.72
+Sebrle,1,8893,Olympics,Pole Vault,5
+Sebrle,1,8893,Olympics,Javelin,70.52
+Sebrle,1,8893,Olympics,"Sprint, 1500m",280.01
+Clay,2,8820,Olympics,"Sprint, 100m",10.44
+Clay,2,8820,Olympics,Long Jump,7.96
+Clay,2,8820,Olympics,Shot Put,15.23
+Clay,2,8820,Olympics,High Jump,2.06
+Clay,2,8820,Olympics,"Sprint, 400m",49.19
+Clay,2,8820,Olympics,"Hurdle, 100m",14.13
+Clay,2,8820,Olympics,Discus,50.11
+Clay,2,8820,Olympics,Pole Vault,4.9
+Clay,2,8820,Olympics,Javelin,69.71
+Clay,2,8820,Olympics,"Sprint, 1500m",282
+Karpov,3,8725,Olympics,"Sprint, 100m",10.5
+Karpov,3,8725,Olympics,Long Jump,7.81
+Karpov,3,8725,Olympics,Shot Put,15.93
+Karpov,3,8725,Olympics,High Jump,2.09
+Karpov,3,8725,Olympics,"Sprint, 400m",46.81
+Karpov,3,8725,Olympics,"Hurdle, 100m",13.97
+Karpov,3,8725,Olympics,Discus,51.65
+Karpov,3,8725,Olympics,Pole Vault,4.6
+Karpov,3,8725,Olympics,Javelin,55.54
+Karpov,3,8725,Olympics,"Sprint, 1500m",278.11
+Macey,4,8414,Olympics,"Sprint, 100m",10.89
+Macey,4,8414,Olympics,Long Jump,7.47
+Macey,4,8414,Olympics,Shot Put,15.73
+Macey,4,8414,Olympics,High Jump,2.15
+Macey,4,8414,Olympics,"Sprint, 400m",48.97
+Macey,4,8414,Olympics,"Hurdle, 100m",14.56
+Macey,4,8414,Olympics,Discus,48.34
+Macey,4,8414,Olympics,Pole Vault,4.4
+Macey,4,8414,Olympics,Javelin,58.46
+Macey,4,8414,Olympics,"Sprint, 1500m",265.42
+Warners,5,8343,Olympics,"Sprint, 100m",10.62
+Warners,5,8343,Olympics,Long Jump,7.74
+Warners,5,8343,Olympics,Shot Put,14.48
+Warners,5,8343,Olympics,High Jump,1.97
+Warners,5,8343,Olympics,"Sprint, 400m",47.97
+Warners,5,8343,Olympics,"Hurdle, 100m",14.01
+Warners,5,8343,Olympics,Discus,43.73
+Warners,5,8343,Olympics,Pole Vault,4.9
+Warners,5,8343,Olympics,Javelin,55.39
+Warners,5,8343,Olympics,"Sprint, 1500m",278.05
+Zsivoczky,6,8287,Olympics,"Sprint, 100m",10.91
+Zsivoczky,6,8287,Olympics,Long Jump,7.14
+Zsivoczky,6,8287,Olympics,Shot Put,15.31
+Zsivoczky,6,8287,Olympics,High Jump,2.12
+Zsivoczky,6,8287,Olympics,"Sprint, 400m",49.4
+Zsivoczky,6,8287,Olympics,"Hurdle, 100m",14.95
+Zsivoczky,6,8287,Olympics,Discus,45.62
+Zsivoczky,6,8287,Olympics,Pole Vault,4.7
+Zsivoczky,6,8287,Olympics,Javelin,63.45
+Zsivoczky,6,8287,Olympics,"Sprint, 1500m",269.54
+Hernu,7,8237,Olympics,"Sprint, 100m",10.97
+Hernu,7,8237,Olympics,Long Jump,7.19
+Hernu,7,8237,Olympics,Shot Put,14.65
+Hernu,7,8237,Olympics,High Jump,2.03
+Hernu,7,8237,Olympics,"Sprint, 400m",48.73
+Hernu,7,8237,Olympics,"Hurdle, 100m",14.25
+Hernu,7,8237,Olympics,Discus,44.72
+Hernu,7,8237,Olympics,Pole Vault,4.8
+Hernu,7,8237,Olympics,Javelin,57.76
+Hernu,7,8237,Olympics,"Sprint, 1500m",264.35
+Nool,8,8235,Olympics,"Sprint, 100m",10.8
+Nool,8,8235,Olympics,Long Jump,7.53
+Nool,8,8235,Olympics,Shot Put,14.26
+Nool,8,8235,Olympics,High Jump,1.88
+Nool,8,8235,Olympics,"Sprint, 400m",48.81
+Nool,8,8235,Olympics,"Hurdle, 100m",14.8
+Nool,8,8235,Olympics,Discus,42.05
+Nool,8,8235,Olympics,Pole Vault,5.4
+Nool,8,8235,Olympics,Javelin,61.33
+Nool,8,8235,Olympics,"Sprint, 1500m",276.33
+Bernard,9,8225,Olympics,"Sprint, 100m",10.69
+Bernard,9,8225,Olympics,Long Jump,7.48
+Bernard,9,8225,Olympics,Shot Put,14.8
+Bernard,9,8225,Olympics,High Jump,2.12
+Bernard,9,8225,Olympics,"Sprint, 400m",49.13
+Bernard,9,8225,Olympics,"Hurdle, 100m",14.17
+Bernard,9,8225,Olympics,Discus,44.75
+Bernard,9,8225,Olympics,Pole Vault,4.4
+Bernard,9,8225,Olympics,Javelin,55.27
+Bernard,9,8225,Olympics,"Sprint, 1500m",276.31
+Schwarzl,10,8102,Olympics,"Sprint, 100m",10.98
+Schwarzl,10,8102,Olympics,Long Jump,7.49
+Schwarzl,10,8102,Olympics,Shot Put,14.01
+Schwarzl,10,8102,Olympics,High Jump,1.94
+Schwarzl,10,8102,Olympics,"Sprint, 400m",49.76
+Schwarzl,10,8102,Olympics,"Hurdle, 100m",14.25
+Schwarzl,10,8102,Olympics,Discus,42.43
+Schwarzl,10,8102,Olympics,Pole Vault,5.1
+Schwarzl,10,8102,Olympics,Javelin,56.32
+Schwarzl,10,8102,Olympics,"Sprint, 1500m",273.56
+Pogorelov,11,8084,Olympics,"Sprint, 100m",10.95
+Pogorelov,11,8084,Olympics,Long Jump,7.31
+Pogorelov,11,8084,Olympics,Shot Put,15.1
+Pogorelov,11,8084,Olympics,High Jump,2.06
+Pogorelov,11,8084,Olympics,"Sprint, 400m",50.79
+Pogorelov,11,8084,Olympics,"Hurdle, 100m",14.21
+Pogorelov,11,8084,Olympics,Discus,44.6
+Pogorelov,11,8084,Olympics,Pole Vault,5
+Pogorelov,11,8084,Olympics,Javelin,53.45
+Pogorelov,11,8084,Olympics,"Sprint, 1500m",287.63
+Schoenbeck,12,8077,Olympics,"Sprint, 100m",10.9
+Schoenbeck,12,8077,Olympics,Long Jump,7.3
+Schoenbeck,12,8077,Olympics,Shot Put,14.77
+Schoenbeck,12,8077,Olympics,High Jump,1.88
+Schoenbeck,12,8077,Olympics,"Sprint, 400m",50.3
+Schoenbeck,12,8077,Olympics,"Hurdle, 100m",14.34
+Schoenbeck,12,8077,Olympics,Discus,44.41
+Schoenbeck,12,8077,Olympics,Pole Vault,5
+Schoenbeck,12,8077,Olympics,Javelin,60.89
+Schoenbeck,12,8077,Olympics,"Sprint, 1500m",278.82
+Barras,13,8067,Olympics,"Sprint, 100m",11.14
+Barras,13,8067,Olympics,Long Jump,6.99
+Barras,13,8067,Olympics,Shot Put,14.91
+Barras,13,8067,Olympics,High Jump,1.94
+Barras,13,8067,Olympics,"Sprint, 400m",49.41
+Barras,13,8067,Olympics,"Hurdle, 100m",14.37
+Barras,13,8067,Olympics,Discus,44.83
+Barras,13,8067,Olympics,Pole Vault,4.6
+Barras,13,8067,Olympics,Javelin,64.55
+Barras,13,8067,Olympics,"Sprint, 1500m",267.09
+Smith,14,8023,Olympics,"Sprint, 100m",10.85
+Smith,14,8023,Olympics,Long Jump,6.81
+Smith,14,8023,Olympics,Shot Put,15.24
+Smith,14,8023,Olympics,High Jump,1.91
+Smith,14,8023,Olympics,"Sprint, 400m",49.27
+Smith,14,8023,Olympics,"Hurdle, 100m",14.01
+Smith,14,8023,Olympics,Discus,49.02
+Smith,14,8023,Olympics,Pole Vault,4.2
+Smith,14,8023,Olympics,Javelin,61.52
+Smith,14,8023,Olympics,"Sprint, 1500m",272.74
+Averyanov,15,8021,Olympics,"Sprint, 100m",10.55
+Averyanov,15,8021,Olympics,Long Jump,7.34
+Averyanov,15,8021,Olympics,Shot Put,14.44
+Averyanov,15,8021,Olympics,High Jump,1.94
+Averyanov,15,8021,Olympics,"Sprint, 400m",49.72
+Averyanov,15,8021,Olympics,"Hurdle, 100m",14.39
+Averyanov,15,8021,Olympics,Discus,39.88
+Averyanov,15,8021,Olympics,Pole Vault,4.8
+Averyanov,15,8021,Olympics,Javelin,54.51
+Averyanov,15,8021,Olympics,"Sprint, 1500m",271.02
+Ojaniemi,16,8006,Olympics,"Sprint, 100m",10.68
+Ojaniemi,16,8006,Olympics,Long Jump,7.5
+Ojaniemi,16,8006,Olympics,Shot Put,14.97
+Ojaniemi,16,8006,Olympics,High Jump,1.94
+Ojaniemi,16,8006,Olympics,"Sprint, 400m",49.12
+Ojaniemi,16,8006,Olympics,"Hurdle, 100m",15.01
+Ojaniemi,16,8006,Olympics,Discus,40.35
+Ojaniemi,16,8006,Olympics,Pole Vault,4.6
+Ojaniemi,16,8006,Olympics,Javelin,59.26
+Ojaniemi,16,8006,Olympics,"Sprint, 1500m",275.71
+Smirnov,17,7993,Olympics,"Sprint, 100m",10.89
+Smirnov,17,7993,Olympics,Long Jump,7.07
+Smirnov,17,7993,Olympics,Shot Put,13.88
+Smirnov,17,7993,Olympics,High Jump,1.94
+Smirnov,17,7993,Olympics,"Sprint, 400m",49.11
+Smirnov,17,7993,Olympics,"Hurdle, 100m",14.77
+Smirnov,17,7993,Olympics,Discus,42.47
+Smirnov,17,7993,Olympics,Pole Vault,4.7
+Smirnov,17,7993,Olympics,Javelin,60.88
+Smirnov,17,7993,Olympics,"Sprint, 1500m",263.31
+Qi,18,7934,Olympics,"Sprint, 100m",11.06
+Qi,18,7934,Olympics,Long Jump,7.34
+Qi,18,7934,Olympics,Shot Put,13.55
+Qi,18,7934,Olympics,High Jump,1.97
+Qi,18,7934,Olympics,"Sprint, 400m",49.65
+Qi,18,7934,Olympics,"Hurdle, 100m",14.78
+Qi,18,7934,Olympics,Discus,45.13
+Qi,18,7934,Olympics,Pole Vault,4.5
+Qi,18,7934,Olympics,Javelin,60.79
+Qi,18,7934,Olympics,"Sprint, 1500m",272.63
+Drews,19,7926,Olympics,"Sprint, 100m",10.87
+Drews,19,7926,Olympics,Long Jump,7.38
+Drews,19,7926,Olympics,Shot Put,13.07
+Drews,19,7926,Olympics,High Jump,1.88
+Drews,19,7926,Olympics,"Sprint, 400m",48.51
+Drews,19,7926,Olympics,"Hurdle, 100m",14.01
+Drews,19,7926,Olympics,Discus,40.11
+Drews,19,7926,Olympics,Pole Vault,5
+Drews,19,7926,Olympics,Javelin,51.53
+Drews,19,7926,Olympics,"Sprint, 1500m",274.21
+Parkhomenko,20,7918,Olympics,"Sprint, 100m",11.14
+Parkhomenko,20,7918,Olympics,Long Jump,6.61
+Parkhomenko,20,7918,Olympics,Shot Put,15.69
+Parkhomenko,20,7918,Olympics,High Jump,2.03
+Parkhomenko,20,7918,Olympics,"Sprint, 400m",51.04
+Parkhomenko,20,7918,Olympics,"Hurdle, 100m",14.88
+Parkhomenko,20,7918,Olympics,Discus,41.9
+Parkhomenko,20,7918,Olympics,Pole Vault,4.8
+Parkhomenko,20,7918,Olympics,Javelin,65.82
+Parkhomenko,20,7918,Olympics,"Sprint, 1500m",277.94
+Terek,21,7893,Olympics,"Sprint, 100m",10.92
+Terek,21,7893,Olympics,Long Jump,6.94
+Terek,21,7893,Olympics,Shot Put,15.15
+Terek,21,7893,Olympics,High Jump,1.94
+Terek,21,7893,Olympics,"Sprint, 400m",49.56
+Terek,21,7893,Olympics,"Hurdle, 100m",15.12
+Terek,21,7893,Olympics,Discus,45.62
+Terek,21,7893,Olympics,Pole Vault,5.3
+Terek,21,7893,Olympics,Javelin,50.62
+Terek,21,7893,Olympics,"Sprint, 1500m",290.36
+Gomez,22,7865,Olympics,"Sprint, 100m",11.08
+Gomez,22,7865,Olympics,Long Jump,7.26
+Gomez,22,7865,Olympics,Shot Put,14.57
+Gomez,22,7865,Olympics,High Jump,1.85
+Gomez,22,7865,Olympics,"Sprint, 400m",48.61
+Gomez,22,7865,Olympics,"Hurdle, 100m",14.41
+Gomez,22,7865,Olympics,Discus,40.95
+Gomez,22,7865,Olympics,Pole Vault,4.4
+Gomez,22,7865,Olympics,Javelin,60.71
+Gomez,22,7865,Olympics,"Sprint, 1500m",269.7
+Turi,23,7708,Olympics,"Sprint, 100m",11.08
+Turi,23,7708,Olympics,Long Jump,6.91
+Turi,23,7708,Olympics,Shot Put,13.62
+Turi,23,7708,Olympics,High Jump,2.03
+Turi,23,7708,Olympics,"Sprint, 400m",51.67
+Turi,23,7708,Olympics,"Hurdle, 100m",14.26
+Turi,23,7708,Olympics,Discus,39.83
+Turi,23,7708,Olympics,Pole Vault,4.8
+Turi,23,7708,Olympics,Javelin,59.34
+Turi,23,7708,Olympics,"Sprint, 1500m",290.01
+Lorenzo,24,7592,Olympics,"Sprint, 100m",11.1
+Lorenzo,24,7592,Olympics,Long Jump,7.03
+Lorenzo,24,7592,Olympics,Shot Put,13.22
+Lorenzo,24,7592,Olympics,High Jump,1.85
+Lorenzo,24,7592,Olympics,"Sprint, 400m",49.34
+Lorenzo,24,7592,Olympics,"Hurdle, 100m",15.38
+Lorenzo,24,7592,Olympics,Discus,40.22
+Lorenzo,24,7592,Olympics,Pole Vault,4.5
+Lorenzo,24,7592,Olympics,Javelin,58.36
+Lorenzo,24,7592,Olympics,"Sprint, 1500m",263.08
+Karlivans,25,7583,Olympics,"Sprint, 100m",11.33
+Karlivans,25,7583,Olympics,Long Jump,7.26
+Karlivans,25,7583,Olympics,Shot Put,13.3
+Karlivans,25,7583,Olympics,High Jump,1.97
+Karlivans,25,7583,Olympics,"Sprint, 400m",50.54
+Karlivans,25,7583,Olympics,"Hurdle, 100m",14.98
+Karlivans,25,7583,Olympics,Discus,43.34
+Karlivans,25,7583,Olympics,Pole Vault,4.5
+Karlivans,25,7583,Olympics,Javelin,52.92
+Karlivans,25,7583,Olympics,"Sprint, 1500m",278.67
+Korkizoglou,26,7573,Olympics,"Sprint, 100m",10.86
+Korkizoglou,26,7573,Olympics,Long Jump,7.07
+Korkizoglou,26,7573,Olympics,Shot Put,14.81
+Korkizoglou,26,7573,Olympics,High Jump,1.94
+Korkizoglou,26,7573,Olympics,"Sprint, 400m",51.16
+Korkizoglou,26,7573,Olympics,"Hurdle, 100m",14.96
+Korkizoglou,26,7573,Olympics,Discus,46.07
+Korkizoglou,26,7573,Olympics,Pole Vault,4.7
+Korkizoglou,26,7573,Olympics,Javelin,53.05
+Korkizoglou,26,7573,Olympics,"Sprint, 1500m",317
+Uldal,27,7495,Olympics,"Sprint, 100m",11.23
+Uldal,27,7495,Olympics,Long Jump,6.99
+Uldal,27,7495,Olympics,Shot Put,13.53
+Uldal,27,7495,Olympics,High Jump,1.85
+Uldal,27,7495,Olympics,"Sprint, 400m",50.95
+Uldal,27,7495,Olympics,"Hurdle, 100m",15.09
+Uldal,27,7495,Olympics,Discus,43.01
+Uldal,27,7495,Olympics,Pole Vault,4.5
+Uldal,27,7495,Olympics,Javelin,60
+Uldal,27,7495,Olympics,"Sprint, 1500m",281.7
+Casarsa,28,7404,Olympics,"Sprint, 100m",11.36
+Casarsa,28,7404,Olympics,Long Jump,6.68
+Casarsa,28,7404,Olympics,Shot Put,14.92
+Casarsa,28,7404,Olympics,High Jump,1.94
+Casarsa,28,7404,Olympics,"Sprint, 400m",53.2
+Casarsa,28,7404,Olympics,"Hurdle, 100m",15.39
+Casarsa,28,7404,Olympics,Discus,48.66
+Casarsa,28,7404,Olympics,Pole Vault,4.4
+Casarsa,28,7404,Olympics,Javelin,58.62
+Casarsa,28,7404,Olympics,"Sprint, 1500m",296.12

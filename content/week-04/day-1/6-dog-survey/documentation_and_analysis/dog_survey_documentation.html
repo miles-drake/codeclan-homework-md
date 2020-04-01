@@ -1,0 +1,87 @@
+---
+title: "Dog Owners' Survey"
+subtitle: "Week 04; Homework"
+author: "Miles Drake"
+date: "2020-04-01"
+output:
+  html_document:
+    df_print: paged
+    number_sections: true
+    toc: true
+    toc_float: true
+---
+
+
+
+<p>The dog owners’ survey is a free-hand data set, comprised of British dog owners. This data set collates the self-reported size, sex, and age of their dogs; the amount that they spend on dog food (in GBP); and the respondant’s contact information.</p>
+<div id="complete-data-set" class="section level1">
+<h1>Complete Data Set</h1>
+<pre><code>## # A tibble: 298 x 9
+##       id title first_name last_name email amount_spent_on~ dog_size dog_male
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;            &lt;dbl&gt;    &lt;dbl&gt; &lt;lgl&gt;   
+##  1     1 Mrs   Frasquito  Dene      fden~            80.0         1 TRUE    
+##  2     2 Ms    Lawrence   Kardos    lkar~            66.3         4 TRUE    
+##  3     3 Rev   Lanna      Wintersg~ lwin~            25.8         3 FALSE   
+##  4     4 Rev   Richmound  Kimmitt   rkim~            50.8         2 TRUE    
+##  5     5 Rev   Valeda     Dallender vdal~            83.4         4 FALSE   
+##  6     6 Hon   Duky       Cavell    dcav~            80.2         4 TRUE    
+##  7     7 Rev   Neal       Gabbetis  ngab~            98.6         3 TRUE    
+##  8     8 Ms    Farrel     Swindin   fswi~            64.2         1 TRUE    
+##  9     9 Dr    Latrena    Heinsh    lhei~             7.44        4 FALSE   
+## 10    10 Mrs   Josh       Daunay    jdau~            55.8         2 TRUE    
+## # ... with 288 more rows, and 1 more variable: dog_age &lt;dbl&gt;</code></pre>
+</div>
+<div id="analysis" class="section level1">
+<h1>Analysis</h1>
+<div id="the-cost-of-feeding-larger-dogs" class="section level2">
+<h2>The Cost of Feeding Larger Dogs</h2>
+<p>The mean cost of dog food for each self-reported size of dog is tabulated below.</p>
+<div id="code" class="section level3">
+<h3>Code</h3>
+<p>Dog size is a coded value, where the code is as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>XS</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>S</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>M</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>L</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>XL</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="results-table" class="section level3">
+<h3>Results Table</h3>
+<pre><code>## # A tibble: 6 x 2
+##   dog_size mean_dog_food_cost_gbp
+##      &lt;dbl&gt;                  &lt;dbl&gt;
+## 1        0                   57.3
+## 2        1                   51.5
+## 3        2                   47.3
+## 4        3                   52.2
+## 5        4                   51.1
+## 6       NA                   53.5</code></pre>
+<p>We would, intuitively, suppose that larger dogs require a greater investment in dog food. However, a quick glance at the summary data suggests that this is not the case. It would appear that there is no correlation between dog size and cost of dog food.</p>
+</div>
+</div>
+</div>

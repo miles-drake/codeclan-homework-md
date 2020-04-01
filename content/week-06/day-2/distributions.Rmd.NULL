@@ -1,0 +1,106 @@
+---
+title: "Distributions"
+subtitle: "Week 06, Day 2; Homework"
+author: "Miles Drake"
+date: 2020-03-31
+output:
+  html_document:
+    df_print: paged
+    number_sections: true
+    toc: true
+    toc_float: true
+---
+
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(error = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r libraries}
+library(janitor)
+library(tidyverse)
+```
+
+# MVP
+
+## Question 1
+*Load the data, `clean_names()` and explore it.*
+
+```{r}
+items <- read_csv("data/20190928-items.csv") %>% 
+  clean_names()
+```
+
+```{r}
+head(items)
+```
+
+## Question 2
+*Find the brand with the highest numbers of phones in the dataset.*
+
+```{r}
+items %>% 
+  select(brand) %>% 
+  group_by(brand) %>% 
+  summarise(
+    count = n()
+  ) %>% 
+  arrange(
+    desc(count)
+  ) %>% 
+  top_n(
+    n = 1,
+    wt = count
+  )
+```
+
+## Question 3
+*For your top brand, plot the distribution of phone ratings as a probability density, overlaying a fitted normal distribution. Do you think the normal distribution provides a good model of these ratings?*
+
+```{r}
+items_samsung_ratings <- items %>% 
+  filter(
+    brand == "Samsung"
+  ) %>% 
+  group_by(
+    rating
+  ) %>% 
+  summarise(
+    count = n()
+  ) %>% 
+  mutate(
+    prob = count/sum(count)
+  )
+```
+
+```{r}
+# Sanity check
+sum(items_samsung_ratings$prob) == 1
+```
+
+```{r}
+items_samsung_ratings
+```
+
+```{r}
+items_samsung_ratings %>% 
+  
+  # Plot the data
+  ggplot() + 
+  aes(
+    x = rating,
+    y = prob
+  ) + 
+  geom_col(
+    col = "white"
+  ) + 
+  
+  # Overlay a normal distribution
+  # Using ggplot's stat_function() function
+  stat_function(
+    fun = dnorm,
+    args = list(
+      mean = mean()
+    )
+  )
+```
+

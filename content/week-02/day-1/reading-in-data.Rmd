@@ -1,0 +1,99 @@
+---
+title: "Reading in Data"
+subtitle: "Week 02, Day 1; Homework"
+author: "Miles Drake"
+date: 2020-03-02
+output:
+  html_document:
+    number_sections: true
+    toc: true
+    toc_float: true
+---
+
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+```{r libraries, include=FALSE}
+library(dplyr)
+library(haven)
+library(jsonlite)
+library(openxlsx)
+library(readr)
+library(readxl)
+```
+
+# MVP
+
+##
+
+```{r}
+state_income_data <- read_csv("data/state_income_data.csv")
+```
+
+##
+
+To specify column names, apply the argument `col_names` to the function `read_csv`.
+
+> If col_names is a character vector, the values will be used as the names of the columns, and the first row of the input will be read into the first row of the output data frame.
+
+##
+
+```{r}
+cars <- read_csv("data/cars.csv", col_types = "cddddl")
+```
+
+##
+
+The `scotland` dataset has leading whitespace that needs to be trimmed from each element.
+
+```{r}
+scotland <- read_delim("data/scotland.txt", delim = ";", skip = 1, trim_ws = TRUE)
+```
+
+##
+
+The `read_file` function reads data into a vector of length one.
+
+##
+
+```{r}
+gaben <- read_csv("data/steam-200k-sample.csv", skip = 4)
+```
+
+##
+
+```{r}
+historic_eu_payments <- read_tsv("data/historic_eu_payments.tsv")
+```
+
+##
+
+The `read_lines` function reads data into a character vector of multiple elements.
+
+##
+
+```{r}
+africa_health_data <- read_stata("data/africa_health_data.dta")
+```
+
+##
+
+```{r}
+sample_json <- read_file("http://makemeanalyst.com/wp-content/uploads/2017/06/sample_json.txt")
+sample_json <- parse_json(sample_json)
+```
+
+# Extension
+
+```{r}
+green_bindle_consulting <- list()
+sheet_names <- getSheetNames("data/green_bindle_consulting.xlsx")
+for (element in sheet_names) {
+  green_bindle_consulting[element] <- read_excel("data/green_bindle_consulting.xlsx", sheet = element)
+}
+```
+
+```{r}
+length(sheet_names) == length(green_bindle_consulting)
+```

@@ -1,0 +1,72 @@
+---
+title: "Reading in Data"
+subtitle: "Week 02, Day 1; Homework"
+author: "Miles Drake"
+date: 2020-03-02
+output:
+  html_document:
+    number_sections: true
+    toc: true
+    toc_float: true
+---
+
+
+
+<div id="mvp" class="section level1">
+<h1>MVP</h1>
+<div id="section" class="section level2">
+<h2></h2>
+<pre class="r"><code>state_income_data &lt;- read_csv(&quot;data/state_income_data.csv&quot;)</code></pre>
+</div>
+<div id="section-1" class="section level2">
+<h2></h2>
+<p>To specify column names, apply the argument <code>col_names</code> to the function <code>read_csv</code>.</p>
+<blockquote>
+<p>If col_names is a character vector, the values will be used as the names of the columns, and the first row of the input will be read into the first row of the output data frame.</p>
+</blockquote>
+</div>
+<div id="section-2" class="section level2">
+<h2></h2>
+<pre class="r"><code>cars &lt;- read_csv(&quot;data/cars.csv&quot;, col_types = &quot;cddddl&quot;)</code></pre>
+</div>
+<div id="section-3" class="section level2">
+<h2></h2>
+<p>The <code>scotland</code> dataset has leading whitespace that needs to be trimmed from each element.</p>
+<pre class="r"><code>scotland &lt;- read_delim(&quot;data/scotland.txt&quot;, delim = &quot;;&quot;, skip = 1, trim_ws = TRUE)</code></pre>
+</div>
+<div id="section-4" class="section level2">
+<h2></h2>
+<p>The <code>read_file</code> function reads data into a vector of length one.</p>
+</div>
+<div id="section-5" class="section level2">
+<h2></h2>
+<pre class="r"><code>gaben &lt;- read_csv(&quot;data/steam-200k-sample.csv&quot;, skip = 4)</code></pre>
+</div>
+<div id="section-6" class="section level2">
+<h2></h2>
+<pre class="r"><code>historic_eu_payments &lt;- read_tsv(&quot;data/historic_eu_payments.tsv&quot;)</code></pre>
+</div>
+<div id="section-7" class="section level2">
+<h2></h2>
+<p>The <code>read_lines</code> function reads data into a character vector of multiple elements.</p>
+</div>
+<div id="section-8" class="section level2">
+<h2></h2>
+<pre class="r"><code>africa_health_data &lt;- read_stata(&quot;data/africa_health_data.dta&quot;)</code></pre>
+</div>
+<div id="section-9" class="section level2">
+<h2></h2>
+<pre class="r"><code>sample_json &lt;- read_file(&quot;http://makemeanalyst.com/wp-content/uploads/2017/06/sample_json.txt&quot;)
+sample_json &lt;- parse_json(sample_json)</code></pre>
+</div>
+</div>
+<div id="extension" class="section level1">
+<h1>Extension</h1>
+<pre class="r"><code>green_bindle_consulting &lt;- list()
+sheet_names &lt;- getSheetNames(&quot;data/green_bindle_consulting.xlsx&quot;)
+for (element in sheet_names) {
+  green_bindle_consulting[element] &lt;- read_excel(&quot;data/green_bindle_consulting.xlsx&quot;, sheet = element)
+}</code></pre>
+<pre class="r"><code>length(sheet_names) == length(green_bindle_consulting)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+</div>

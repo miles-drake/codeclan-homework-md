@@ -1,0 +1,88 @@
+---
+title: "Data Types"
+subtitle: "Week 01, Day 2; Homework"
+author: "Miles Drake"
+date: 2020-02-25
+output:
+  html_document:
+    number_sections: true
+    toc: true
+    toc_float: true
+---
+
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+```{r libraries}
+library(tidyquant)
+library(dplyr)
+```
+
+# MVP, Part 1
+
+##
+
+```{r}
+stock_prices<-c(23,27,23,21,34,24,25,30,37,30)
+day_of_week<-rep(c("Monday","Tuesday","Wednesday","Thursday","Friday"),2)
+```
+
+##
+
+```{r}
+day_of_week_factor<-as.factor(day_of_week)
+named_stock_prices<-stock_prices
+names(named_stock_prices)<-day_of_week
+```
+
+##
+
+```{r}
+stock_data<-data.frame(stock_prices,day_of_week)
+```
+
+##
+
+```{r}
+stock_list<-list("Stock Prices"=stock_prices,"Day of Week"=day_of_week,"Data Frame"=stock_data)
+```
+
+# MVP, Part 2
+
+##
+
+```{r}
+stock_prices[4]
+stock_prices[5]
+stock_prices[6]
+stock_prices[stock_prices>30]
+```
+
+##
+
+```{r}
+stock_data$day_of_week
+stock_data[stock_data$stock_prices>30,]
+stock_data[,1]
+stock_data[3,]
+stock_data[3,1]
+```
+
+##
+
+```{r}
+stock_list$`Data Frame`
+```
+
+# Extension
+
+```{r}
+# help(package="tidyquant")
+```
+
+```{r}
+aapl_stock_prices<-tq_get("AAPL", get="stock.prices",from="2020-01-01")
+aapl_stock_prices[,c("date","close")]
+subset(aapl_stock_prices,close>mean(close))
+```

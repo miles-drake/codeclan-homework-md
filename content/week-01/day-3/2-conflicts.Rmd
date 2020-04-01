@@ -1,0 +1,27 @@
+---
+title: "Errors"
+subtitle: "Week 01, Day 3; Homework"
+author: "Miles Drake"
+date: 2020-02-26
+output:
+  html_document:
+    number_sections: true
+    toc: true
+    toc_float: true
+---
+
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+```{r libraries, include = FALSE}
+library(conflicted)
+library(MASS)
+library(dplyr)
+```
+
+```{r}
+select(mtcars, "mpg")
+dplyr::select(mtcars, "mpg")
+```

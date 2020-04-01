@@ -1,0 +1,206 @@
+---
+title: "Introduction to `ggplot2` Homework"
+subtitle: "Week 05, Day 1; Homework"
+author: "Miles Drake"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+    number_sections: true
+    self_contained: no
+    toc: true
+    toc_float: true
+---
+
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(error = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r libraries}
+library(CodeClanData)
+library(tidyverse)
+```
+
+# MVP
+
+## Question 1
+Load in the libraries you need, and look at the backpack data. Take note of variable names and dimensions.
+
+```{r}
+head(backpack)
+```
+
+## Question 2
+What is the distribution of backpack weights that students are carrying? Choose an appropriate graph to show the distribution.
+
+```{r}
+backpack %>% 
+  ggplot() +
+  geom_histogram() +
+  aes(
+    x = backpack_weight
+  ) +
+  labs(
+    x = "Backpack Weight",
+    y = "Count",
+    title = "Backpack Weight",
+    subtitle = "Weight of backpack carried by higher education students"
+  )
+```
+
+The above histogram shows that the backpack weight follows an approximately normal distribution with a positive skew.
+
+## Question 3
+Are there differences in backpack weight between sex?
+
+```{r}
+backpack %>% 
+  ggplot() +
+  geom_histogram() +
+  aes(
+    x = backpack_weight,
+    fill = sex
+  ) +
+  labs(
+    x = "Backpack Weight",
+    y = "Count",
+    title = "Backpack Weight",
+    subtitle = "Weight of backpack carried by higher education students"
+  ) +
+  facet_wrap(
+    ~sex
+  )
+```
+
+Both sexes follow approximately the same distribution, but the data for female students is more clustered around the median value of 11.
+
+## Question 4
+What is the relationship between body weight and backpack weight?
+
+```{r}
+backpack %>% 
+  ggplot() +
+  geom_point() +
+  geom_smooth() +
+  aes(
+    x = backpack_weight,
+    y = body_weight
+  ) +
+  labs(
+    x = "Backpack Weight",
+    y = "Body Weight",
+    title = "Backpack Weight and Body Weight",
+    subtitle = "Weight of backpack carried by higher education students"
+  )
+```
+
+There appears to be no relationship between backpack weight and body weight. There is, at a stretch, a very weak positive correlation.
+
+## Question 5
+Is this relationship different between men and women? Choose an appropriate plot and interpret your findings.
+
+```{r}
+backpack %>% 
+  ggplot() +
+  geom_point() +
+  geom_smooth() +
+  aes(
+    x = backpack_weight,
+    y = body_weight,
+    fill = sex
+  ) +
+  labs(
+    x = "Backpack Weight",
+    y = "Body Weight",
+    title = "Backpack Weight Against Body Weight",
+    subtitle = "Weight of backpack carried by higher education students"
+  ) +
+  facet_wrap(
+    ~sex
+  )
+```
+
+The relationship appears to be the same when adjusted for sex, noting that one male student is exaggerating the correlation at the far end of the data.
+
+## Question 6
+What **proportion** of students report back pain?
+
+```{r}
+sum(backpack$back_problems) / length(backpack$back_problems) * 100
+```
+
+`r sum(backpack$back_problems) / length(backpack$back_problems) * 100`% of students report back pain.
+
+## Question 7
+Is this proportion different between men and women?
+
+```{r}
+backpack_problems_male <- backpack %>% 
+  filter(
+    sex == "Male"
+  ) %>% 
+  select(
+    back_problems
+  ) %>% 
+  as_vector() %>% 
+  as.logical()
+
+backpack_problems_female <- backpack %>% 
+  filter(
+    sex == "Female"
+  ) %>% 
+  select(
+    back_problems
+  ) %>% 
+  as_vector() %>% 
+  as.logical()
+```
+
+```{r}
+round(
+  sum(backpack_problems_male) / length(backpack_problems_male) * 100,
+  2
+)
+```
+
+`r round(sum(backpack_problems_male) / length(backpack_problems_male) * 100, 2)`% of male students report back pain.
+
+```{r}
+round(
+  sum(backpack_problems_female) / length(backpack_problems_female) * 100,
+  2
+)
+```
+
+`r round(sum(backpack_problems_female) / length(backpack_problems_female) * 100, 2)`% of female students report back pain. This is a total difference of female students being `r round(sum(backpack_problems_female) / length(backpack_problems_female) * 100, 2) - round(sum(backpack_problems_male) / length(backpack_problems_male) * 100, 2)`% more likely to report back pain.
+
+## Question 8
+Now you’ve investigated your data separately, create plots to describe the relationship between backpack weight, body weight, gender and reported backpain.
+
+```{r}
+backpack %>% 
+  ggplot() +
+  geom_point() +
+  geom_smooth(
+    aes(
+      fill = sex
+    ),
+    show.legend = FALSE
+  ) +
+  aes(
+    x = backpack_weight,
+    y = body_weight
+  ) +
+  labs(
+    x = "Backpack Weight",
+    y = "Body Weight",
+    title = "Backpack Weight Against Body Weight",
+    subtitle = "Weight of backpack carried by higher education students"
+  ) +
+  facet_grid(
+    ~sex ~back_problems,
+    labeller = "label_both"
+  )
+```
+
+We see that the paucity of male students who have reported back problems has resulted in very few data points in the male with back problems plot. An outlier in the male plot is stretching the length of the plot, though it does not appear to have a notable effect on the data.

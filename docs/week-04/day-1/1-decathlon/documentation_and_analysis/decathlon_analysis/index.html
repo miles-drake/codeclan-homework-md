@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Decathlon Analysis - Miles Drake&#39;s CodeClan Homework</title>
+<meta name="description" content="DE3 (data analysis) cohort">
+<meta name="generator" content="Hugo 0.65.3" />
+<link href="../../../../../index.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="../../../../../week-04/day-1/1-decathlon/documentation_and_analysis/decathlon_analysis/">
+<link rel="stylesheet" href="../../../../../css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="../../../../../css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="../../../../../js/bundle.js"></script><style>
+:root {}
+</style>
+<meta property="og:title" content="Decathlon Analysis" />
+<meta property="og:description" content="Who had the longest long jump seen in the data?decathlon_analysis$long_jump_max &lt;- decathlon_data %&gt;% filter(event_name == &quot;Long Jump&quot;) %&gt;% select(name,event_score) %&gt;% arrange(desc(event_score)) %&gt;% head(1)## # A tibble: 1 x 2## name event_score## &lt;chr&gt; &lt;dbl&gt;## 1 Clay 7.96The longest recorded long jump in this data set was achieved by Clay, with a distance of 7.96 m.
+What was the average 100m time in each competition?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/week-04/day-1/1-decathlon/documentation_and_analysis/decathlon_analysis/" />
+<meta property="og:image" content="/images/og-image.png"/>
+<meta property="article:published_time" content="2020-04-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-01T00:00:00+00:00" /><meta property="og:site_name" content="Hugo Techdoc Theme" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/images/og-image.png"/>
+
+<meta name="twitter:title" content="Decathlon Analysis"/>
+<meta name="twitter:description" content="Who had the longest long jump seen in the data?decathlon_analysis$long_jump_max &lt;- decathlon_data %&gt;% filter(event_name == &quot;Long Jump&quot;) %&gt;% select(name,event_score) %&gt;% arrange(desc(event_score)) %&gt;% head(1)## # A tibble: 1 x 2## name event_score## &lt;chr&gt; &lt;dbl&gt;## 1 Clay 7.96The longest recorded long jump in this data set was achieved by Clay, with a distance of 7.96 m.
+What was the average 100m time in each competition?"/>
+<meta itemprop="name" content="Decathlon Analysis">
+<meta itemprop="description" content="Who had the longest long jump seen in the data?decathlon_analysis$long_jump_max &lt;- decathlon_data %&gt;% filter(event_name == &quot;Long Jump&quot;) %&gt;% select(name,event_score) %&gt;% arrange(desc(event_score)) %&gt;% head(1)## # A tibble: 1 x 2## name event_score## &lt;chr&gt; &lt;dbl&gt;## 1 Clay 7.96The longest recorded long jump in this data set was achieved by Clay, with a distance of 7.96 m.
+What was the average 100m time in each competition?">
+<meta itemprop="datePublished" content="2020-04-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-04-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="487">
+<meta itemprop="image" content="/images/og-image.png"/>
+
+
+
+<meta itemprop="keywords" content="" /></head>
+<body><div class="container"><header>
+<h1>Miles Drake&#39;s CodeClan Homework</h1>
+<a href="https://github.com/thingsym/hugo-theme-techdoc" class="github"><i class="fab fa-github"></i></a>
+<p class="description">DE3 (data analysis) cohort</p>
+
+</header>
+<div class="global-menu">
+<nav>
+<ul>
+<li><a href="../../../../../">Home</a></li>
+<li><a href="https://twitter.com/thingsym">Twitter</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>Decathlon Analysis</h1>
+
+
+
+<div id="who-had-the-longest-long-jump-seen-in-the-data" class="section level1">
+<h1>Who had the longest long jump seen in the data?</h1>
+<pre class="r"><code>decathlon_analysis$long_jump_max &lt;- decathlon_data %&gt;% 
+  filter(
+    event_name == &quot;Long Jump&quot;
+  ) %&gt;% 
+  select(
+    name,
+    event_score
+  ) %&gt;% 
+  arrange(
+    desc(event_score)
+  ) %&gt;% 
+  head(1)</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   name  event_score
+##   &lt;chr&gt;       &lt;dbl&gt;
+## 1 Clay         7.96</code></pre>
+<p>The longest recorded long jump in this data set was achieved by <strong>Clay</strong>, with a distance of <strong>7.96</strong> m.</p>
+</div>
+<div id="what-was-the-average-100m-time-in-each-competition" class="section level1">
+<h1>What was the average 100m time in each competition?</h1>
+<pre class="r"><code>decathlon_analysis$average_100m &lt;- decathlon_data %&gt;% 
+  filter(
+    event_name == &quot;Sprint, 100m&quot;
+  ) %&gt;% 
+  group_by(
+    competition
+  ) %&gt;% 
+  summarise(
+    mean_100m_time = mean(event_score)
+  ) %&gt;% 
+  mutate(
+    mean_100m_time = round(mean_100m_time, 2)
+  )</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   competition mean_100m_time
+##   &lt;chr&gt;                &lt;dbl&gt;
+## 1 Decastar              11.2
+## 2 Olympics              10.9</code></pre>
+<p>The average 100 m sprint time in the <strong>Decastar</strong> was <strong>11.18</strong> s.
+The average 100 m sprint time in the <strong>Olympics</strong> was <strong>10.92</strong> s.</p>
+</div>
+<div id="who-had-the-highest-total-points-across-both-competitions" class="section level1">
+<h1>Who had the highest total points across both competitions?</h1>
+<pre class="r"><code>decathlon_analysis$points &lt;- decathlon_data %&gt;% 
+  select(
+    name,
+    competition,
+    points
+  ) %&gt;% 
+  distinct() %&gt;% 
+  group_by(
+    name
+  ) %&gt;% 
+  summarise(
+    total_points = sum(points)
+  ) %&gt;% 
+  arrange(
+    desc(total_points)
+  ) %&gt;% 
+  head(1)</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   name   total_points
+##   &lt;chr&gt;         &lt;dbl&gt;
+## 1 Sebrle        17110</code></pre>
+<p>The highest total points across both competitions was attained by
+<strong>Sebrle</strong>,
+with a total points score of
+<strong>17,110</strong>.</p>
+</div>
+<div id="what-was-the-shot-put-scores-for-the-top-three-competitors-in-each-competition" class="section level1">
+<h1>What was the shot-put scores for the top three competitors in each competition?</h1>
+<p>Note that we are considering the top three competitors (assumed to mean in each competition, not each event) only.</p>
+<pre class="r"><code>decathlon_analysis$shot_put &lt;- decathlon_data %&gt;% 
+  filter(
+    rank &lt;= 3,
+    event_name == &quot;Shot Put&quot;
+  ) %&gt;% 
+  select(
+    -points,
+    -event_name
+  ) %&gt;% 
+  rename(
+    shot_put_score = event_score
+  ) %&gt;% 
+  arrange(
+    competition,
+    rank
+  )</code></pre>
+<pre><code>## # A tibble: 6 x 4
+##   name    rank competition shot_put_score
+##   &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt;
+## 1 Sebrle     1 Decastar              14.8
+## 2 Clay       2 Decastar              14.3
+## 3 Karpov     3 Decastar              14.8
+## 4 Sebrle     1 Olympics              16.4
+## 5 Clay       2 Olympics              15.2
+## 6 Karpov     3 Olympics              15.9</code></pre>
+</div>
+<div id="what-was-the-average-points-for-competitors-who-ran-the-400m-in-less-than-50-seconds-vs.-those-than-ran-400m-in-more-than-50-seconds" class="section level1">
+<h1>What was the average points for competitors who ran the 400m in less than 50 seconds vs. those than ran 400m in more than 50 seconds?</h1>
+<pre class="r"><code>decathlon_analysis$fast_sprinter &lt;- decathlon_data %&gt;% 
+  filter(
+    event_name == &quot;Sprint, 400m&quot;
+  ) %&gt;% 
+  mutate(
+    fast_sprinter = ifelse(
+      event_score &lt; 50,
+      TRUE,
+      FALSE
+    )
+  ) %&gt;% 
+  group_by(
+    fast_sprinter
+  ) %&gt;% 
+  summarise(
+    mean_points = mean(points)
+  ) %&gt;% 
+  mutate(
+    mean_points = round(mean_points, 2)
+  ) %&gt;% 
+  arrange(
+    desc(mean_points)
+  )</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   fast_sprinter mean_points
+##   &lt;lgl&gt;               &lt;dbl&gt;
+## 1 TRUE                8120.
+## 2 FALSE               7727.</code></pre>
+<p>The average (competition) points for an decathlete who completes the 400 m sprint in less than 50 seconds is
+<strong>8120.48</strong>.
+The average points for an athlete who completes the 400 m sprint in greater than (or equal to) 50 seconds is
+<strong>7727.17</strong>.
+This is a total difference of
+<strong>393.31</strong>.</p>
+<p>Predictably, decathletes who complete the 400 m sprint quickly have greater mean competition-wide points total.</p>
+</div>
+<div class="edit-meta">
+Last updated on 1 Apr 2020
+
+
+<br>
+Published on 1 Apr 2020
+<br><a href="https://github.com/apologyfestival/codeclan_homework_miles/edit/master/content/week-04%5cday-1%5c1-decathlon%5cdocumentation_and_analysis%5cdecathlon_analysis.html" class="edit-page"><i class="fas fa-pen-square"></i> Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="../../../../../week-04/" title="Week-04s"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Week-04s</a>
+<a class="nav nav-next" href="../../../../../week-04/day-1/6-dog-survey/documentation_and_analysis/dog_survey_documentation/" title="Dog Owners&#39; Survey">Next - Dog Owners&#39; Survey <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+
+<nav class="open-menu">
+<ul>
+<li class=""><a href="../../../../../">Home</a></li>
+
+<li class=""><a href="../../../../../week-03/">Week-03s</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="../../../../../week-03/day-3/codeclan-tweets/">Tidyverse Consolidation Homework</a></li>
+<li class=""><a href="../../../../../week-03/day-2/1-world-bank-data/">World Bank Data</a></li>
+<li class=""><a href="../../../../../week-03/day-1/1-dplyr/">dplyr Homework</a></li>
+</ul>
+  
+</li>
+
+<li class="parent"><a href="../../../../../week-04/">Week-04s</a>
+  
+<ul class="sub-menu">
+<li class="active"><a href="../../../../../week-04/day-1/1-decathlon/documentation_and_analysis/decathlon_analysis/">Decathlon Analysis</a></li>
+<li class=""><a href="../../../../../week-04/day-1/6-dog-survey/documentation_and_analysis/dog_survey_documentation/">Dog Owners&#39; Survey</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="../../../../../week-05/">Week-05s</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="../../../../../week-05/day-1/ggplot/">Introduction to `ggplot2` Homework</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="../../../../../week-06/">Week-06s</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="../../../../../week-06/day-1/probability/">Probability</a></li>
+<li class=""><a href="../../../../../week-06/day-2/distributions/"></a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="../../../../../week-02/">Week-02s</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="../../../../../week-02/day-2/connecting-to-remote-databases/">Connecting to Remote Databases in R</a></li>
+<li class=""><a href="../../../../../week-02/day-1/reading-in-data/">Reading in Data</a></li>
+<li class=""><a href="../../../../../week-02/day-5/1-sql/"></a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="../../../../../week-01/">Week-01s</a>
+  
+<ul class="sub-menu">
+<li class=""><a href="../../../../../week-01/day-5/conditionals-functions-loops/">Conditionals, Functions, and Loops</a></li>
+<li class=""><a href="../../../../../week-01/day-3/1-best-practice/">Best Practice</a></li>
+<li class=""><a href="../../../../../week-01/day-3/2-conflicts/">Errors</a></li>
+<li class=""><a href="../../../../../week-01/day-2/data-types/">Data Types</a></li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

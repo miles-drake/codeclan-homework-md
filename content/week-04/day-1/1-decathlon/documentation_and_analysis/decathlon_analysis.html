@@ -1,0 +1,153 @@
+---
+title: "Decathlon Analysis"
+subtitle: "Week 04; Homework"
+author: "Miles Drake"
+date: "2020-04-01"
+output:
+  html_document:
+    df_print: paged
+    number_sections: true
+    toc: true
+    toc_float: true
+---
+
+
+
+<div id="who-had-the-longest-long-jump-seen-in-the-data" class="section level1">
+<h1>Who had the longest long jump seen in the data?</h1>
+<pre class="r"><code>decathlon_analysis$long_jump_max &lt;- decathlon_data %&gt;% 
+  filter(
+    event_name == &quot;Long Jump&quot;
+  ) %&gt;% 
+  select(
+    name,
+    event_score
+  ) %&gt;% 
+  arrange(
+    desc(event_score)
+  ) %&gt;% 
+  head(1)</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   name  event_score
+##   &lt;chr&gt;       &lt;dbl&gt;
+## 1 Clay         7.96</code></pre>
+<p>The longest recorded long jump in this data set was achieved by <strong>Clay</strong>, with a distance of <strong>7.96</strong> m.</p>
+</div>
+<div id="what-was-the-average-100m-time-in-each-competition" class="section level1">
+<h1>What was the average 100m time in each competition?</h1>
+<pre class="r"><code>decathlon_analysis$average_100m &lt;- decathlon_data %&gt;% 
+  filter(
+    event_name == &quot;Sprint, 100m&quot;
+  ) %&gt;% 
+  group_by(
+    competition
+  ) %&gt;% 
+  summarise(
+    mean_100m_time = mean(event_score)
+  ) %&gt;% 
+  mutate(
+    mean_100m_time = round(mean_100m_time, 2)
+  )</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   competition mean_100m_time
+##   &lt;chr&gt;                &lt;dbl&gt;
+## 1 Decastar              11.2
+## 2 Olympics              10.9</code></pre>
+<p>The average 100 m sprint time in the <strong>Decastar</strong> was <strong>11.18</strong> s.
+The average 100 m sprint time in the <strong>Olympics</strong> was <strong>10.92</strong> s.</p>
+</div>
+<div id="who-had-the-highest-total-points-across-both-competitions" class="section level1">
+<h1>Who had the highest total points across both competitions?</h1>
+<pre class="r"><code>decathlon_analysis$points &lt;- decathlon_data %&gt;% 
+  select(
+    name,
+    competition,
+    points
+  ) %&gt;% 
+  distinct() %&gt;% 
+  group_by(
+    name
+  ) %&gt;% 
+  summarise(
+    total_points = sum(points)
+  ) %&gt;% 
+  arrange(
+    desc(total_points)
+  ) %&gt;% 
+  head(1)</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   name   total_points
+##   &lt;chr&gt;         &lt;dbl&gt;
+## 1 Sebrle        17110</code></pre>
+<p>The highest total points across both competitions was attained by
+<strong>Sebrle</strong>,
+with a total points score of
+<strong>17,110</strong>.</p>
+</div>
+<div id="what-was-the-shot-put-scores-for-the-top-three-competitors-in-each-competition" class="section level1">
+<h1>What was the shot-put scores for the top three competitors in each competition?</h1>
+<p>Note that we are considering the top three competitors (assumed to mean in each competition, not each event) only.</p>
+<pre class="r"><code>decathlon_analysis$shot_put &lt;- decathlon_data %&gt;% 
+  filter(
+    rank &lt;= 3,
+    event_name == &quot;Shot Put&quot;
+  ) %&gt;% 
+  select(
+    -points,
+    -event_name
+  ) %&gt;% 
+  rename(
+    shot_put_score = event_score
+  ) %&gt;% 
+  arrange(
+    competition,
+    rank
+  )</code></pre>
+<pre><code>## # A tibble: 6 x 4
+##   name    rank competition shot_put_score
+##   &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt;
+## 1 Sebrle     1 Decastar              14.8
+## 2 Clay       2 Decastar              14.3
+## 3 Karpov     3 Decastar              14.8
+## 4 Sebrle     1 Olympics              16.4
+## 5 Clay       2 Olympics              15.2
+## 6 Karpov     3 Olympics              15.9</code></pre>
+</div>
+<div id="what-was-the-average-points-for-competitors-who-ran-the-400m-in-less-than-50-seconds-vs.-those-than-ran-400m-in-more-than-50-seconds" class="section level1">
+<h1>What was the average points for competitors who ran the 400m in less than 50 seconds vs. those than ran 400m in more than 50 seconds?</h1>
+<pre class="r"><code>decathlon_analysis$fast_sprinter &lt;- decathlon_data %&gt;% 
+  filter(
+    event_name == &quot;Sprint, 400m&quot;
+  ) %&gt;% 
+  mutate(
+    fast_sprinter = ifelse(
+      event_score &lt; 50,
+      TRUE,
+      FALSE
+    )
+  ) %&gt;% 
+  group_by(
+    fast_sprinter
+  ) %&gt;% 
+  summarise(
+    mean_points = mean(points)
+  ) %&gt;% 
+  mutate(
+    mean_points = round(mean_points, 2)
+  ) %&gt;% 
+  arrange(
+    desc(mean_points)
+  )</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   fast_sprinter mean_points
+##   &lt;lgl&gt;               &lt;dbl&gt;
+## 1 TRUE                8120.
+## 2 FALSE               7727.</code></pre>
+<p>The average (competition) points for an decathlete who completes the 400 m sprint in less than 50 seconds is
+<strong>8120.48</strong>.
+The average points for an athlete who completes the 400 m sprint in greater than (or equal to) 50 seconds is
+<strong>7727.17</strong>.
+This is a total difference of
+<strong>393.31</strong>.</p>
+<p>Predictably, decathletes who complete the 400 m sprint quickly have greater mean competition-wide points total.</p>
+</div>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Week-05s on Miles Drake&#39;s CodeClan Homework</title>
+    <link>/week-05/</link>
+    <description>Recent content in Week-05s on Miles Drake&#39;s CodeClan Homework</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/week-05/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction to `ggplot2` Homework</title>
+      <link>/week-05/day-1/ggplot/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-05/day-1/ggplot/</guid>
+      <description>library(CodeClanData)library(tidyverse)MVPQuestion 1Load in the libraries you need, and look at the backpack data. Take note of variable names and dimensions.
+head(backpack)## backpack_weight body_weight ratio back_problems major year sex## 1 9 125 0.0720000 1 Bio 3 Female## 2 8 195 0.0410256 0 Philosophy 5 Male## 3 10 120 0.0833333 1 GRC 4 Female## 4 6 155 0.0387097 0 CSC 6 Male## 5 8 180 0.</description>
+    </item>
+    
+  </channel>
+</rss>

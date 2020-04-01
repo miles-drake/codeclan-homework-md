@@ -1,0 +1,112 @@
+# CodeClan DE3 Homework
+theme = "hugo-theme-techdoc-fork"
+baseurl = "/"
+languageCode = "en-gb"
+title = "Miles Drake's CodeClan Homework"
+
+# Ignore RStudio files
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "\\.Rproj$", "_files$", "_cache$"]
+
+# Publication
+# Publish to "docs" folder for GitPages support
+publishDir = "docs"
+# Use relative, ugly URLs for local/offline support
+relativeURLs = true
+# uglyURLs = true
+
+[params]
+
+  # Source Code repository section
+  description = "DE3 (data analysis) cohort"
+  github_repository = "https://github.com/thingsym/hugo-theme-techdoc"
+
+  # Documentation repository section
+  # documentation repository (set edit link to documentation repository)
+  github_doc_repository = "https://github.com/apologyfestival/codeclan_homework_miles"
+
+  # Open Graph and Twitter Cards settings section
+  # Open Graph settings for each page are set on the front matter.
+  # See https://gohugo.io/templates/internal/#open-graph
+  # See https://gohugo.io/templates/internal/#twitter-cards
+  title = "Hugo Techdoc Theme"
+  images = ["images/og-image.png"] # Open graph images are placed in `static/images`
+
+  # Theme settings section
+  # Theme color
+  # See color value reference https://developer.mozilla.org/en-US/docs/Web/CSS/color
+  custom_font_color = ""
+  custom_background_color = ""
+
+  # Documentation menu section
+  # Menu style settings
+  # Choose "open-menu" or "slide-menu"
+  menu_style = "open-menu"
+
+  # Date format
+  dateformat = "" # default "2 Jan 2006"
+  # See the format reference https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
+
+  # path name excluded from documentation menu
+  menu_exclusion = [
+    "archives",
+    "archive",
+    "blog",
+    "entry",
+    "post",
+    "posts",
+  ]
+
+#  # Algolia site search section
+#  # See https://www.algolia.com/doc/
+#  algolia_search_enable = true
+#  algolia_indexName = "hugo-demo-techdoc"
+#  algolia_appId = "7W4SAN4PLK"
+#  algolia_apiKey = "cbf12a63ff72d9c5dc0c10c195cf9128" # Search-Only API Key
+
+# Global menu section
+# See https://gohugo.io/content-management/menus/
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Twitter"
+    url = "https://twitter.com/thingsym"
+    weight = 2
+
+# Markup configure section
+# See https://gohugo.io/getting-started/configuration-markup/
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark.renderer]
+    unsafe= true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
+# Algolia Search configure section
+[outputFormats.Algolia]
+  baseName = "algolia"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
+
+[params.algolia]
+  vars = [
+    "title",
+    "summary",
+    "content",
+    "date",
+    "publishdate",
+    "description",
+    "permalink",
+    "keywords",
+    "lastmod",
+  ]
+  params = [
+    "tags",
+    "categories",
+  ]

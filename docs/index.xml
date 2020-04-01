@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Miles Drake&#39;s CodeClan Homework</title>
+    <link>/</link>
+    <description>Recent content on Miles Drake&#39;s CodeClan Homework</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 05 May 2016 21:48:51 -0700</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Decathlon Analysis</title>
+      <link>/week-04/day-1/1-decathlon/documentation_and_analysis/decathlon_analysis/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-04/day-1/1-decathlon/documentation_and_analysis/decathlon_analysis/</guid>
+      <description>Who had the longest long jump seen in the data?decathlon_analysis$long_jump_max &amp;lt;- decathlon_data %&amp;gt;% filter(event_name == &amp;quot;Long Jump&amp;quot;) %&amp;gt;% select(name,event_score) %&amp;gt;% arrange(desc(event_score)) %&amp;gt;% head(1)## # A tibble: 1 x 2## name event_score## &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt;## 1 Clay 7.96The longest recorded long jump in this data set was achieved by Clay, with a distance of 7.96 m.
+What was the average 100m time in each competition?</description>
+    </item>
+    
+    <item>
+      <title>Dog Owners&#39; Survey</title>
+      <link>/week-04/day-1/6-dog-survey/documentation_and_analysis/dog_survey_documentation/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-04/day-1/6-dog-survey/documentation_and_analysis/dog_survey_documentation/</guid>
+      <description>The dog owners’ survey is a free-hand data set, comprised of British dog owners. This data set collates the self-reported size, sex, and age of their dogs; the amount that they spend on dog food (in GBP); and the respondant’s contact information.
+Complete Data Set## # A tibble: 298 x 9## id title first_name last_name email amount_spent_on~ dog_size dog_male## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;lgl&amp;gt; ## 1 1 Mrs Frasquito Dene fden~ 80.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to `ggplot2` Homework</title>
+      <link>/week-05/day-1/ggplot/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-05/day-1/ggplot/</guid>
+      <description>library(CodeClanData)library(tidyverse)MVPQuestion 1Load in the libraries you need, and look at the backpack data. Take note of variable names and dimensions.
+head(backpack)## backpack_weight body_weight ratio back_problems major year sex## 1 9 125 0.0720000 1 Bio 3 Female## 2 8 195 0.0410256 0 Philosophy 5 Male## 3 10 120 0.0833333 1 GRC 4 Female## 4 6 155 0.0387097 0 CSC 6 Male## 5 8 180 0.</description>
+    </item>
+    
+    <item>
+      <title>Tidyverse Consolidation Homework</title>
+      <link>/week-03/day-3/codeclan-tweets/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-03/day-3/codeclan-tweets/</guid>
+      <description>library(tidyverse)MVPtweets &amp;lt;- read_csv(file(&amp;quot;data/code_clan_tweets_utf-8.csv&amp;quot;, encoding = &amp;quot;UTF-8&amp;quot;))nrow(tweets)## [1] 234ncol(tweets)## [1] 27colnames(tweets)## [1] &amp;quot;tweet_id&amp;quot; &amp;quot;user_id&amp;quot; &amp;quot;created_at&amp;quot; ## [4] &amp;quot;screen_name&amp;quot; &amp;quot;text&amp;quot; &amp;quot;source&amp;quot; ## [7] &amp;quot;display_text_width&amp;quot; &amp;quot;reply_to_status_id&amp;quot; &amp;quot;reply_to_user_id&amp;quot; ## [10] &amp;quot;reply_to_screen_name&amp;quot; &amp;quot;is_quote&amp;quot; &amp;quot;is_retweet&amp;quot; ## [13] &amp;quot;favorite_count&amp;quot; &amp;quot;retweet_count&amp;quot; &amp;quot;quote_count&amp;quot; ## [16] &amp;quot;reply_count&amp;quot; &amp;quot;hashtags&amp;quot; &amp;quot;symbols&amp;quot; ## [19] &amp;quot;urls_url&amp;quot; &amp;quot;urls_t.co&amp;quot; &amp;quot;urls_expanded_url&amp;quot; ## [22] &amp;quot;media_type&amp;quot; &amp;quot;retweet_source&amp;quot; &amp;quot;retweet_favorite_count&amp;quot;## [25] &amp;quot;retweet_retweet_count&amp;quot; &amp;quot;retweet_user_id&amp;quot; &amp;quot;retweet_location&amp;quot;ggplot(tweets) +aes(y = favorite_count) +geom_boxplot()tweets %&amp;gt;% filter(is_quote == FALSE) %&amp;gt;% summarise(sum(favorite_count)) %&amp;gt;% as.</description>
+    </item>
+    
+    <item>
+      <title>World Bank Data</title>
+      <link>/week-03/day-2/1-world-bank-data/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-03/day-2/1-world-bank-data/</guid>
+      <description>library(janitor)library(tidyverse)library(outliers)MVPwomen &amp;lt;- read_csv(&amp;quot;data/women_in_gov.csv&amp;quot;, skip = 4)women &amp;lt;- rename(women,&amp;quot;country_name&amp;quot; = &amp;quot;Country Name&amp;quot;,&amp;quot;country_code&amp;quot; = &amp;quot;Country Code&amp;quot;,&amp;quot;indicator_name&amp;quot; = &amp;quot;Indicator Name&amp;quot;,&amp;quot;indicator_code&amp;quot; = &amp;quot;Indicator Code&amp;quot;)unique(women$indicator_name)## [1] &amp;quot;Proportion of seats held by women in national parliaments (%)&amp;quot;unique(women$indicator_code)## [1] &amp;quot;SG.GEN.PARL.ZS&amp;quot;unique(women$X64)## [1] NAwomen &amp;lt;- select(women,-indicator_name,-indicator_code,-X64)women &amp;lt;- pivot_longer(women,cols = &amp;quot;1960&amp;quot;:&amp;quot;2018&amp;quot;,names_to = &amp;quot;year&amp;quot;,values_to = &amp;quot;percent&amp;quot;)women_na &amp;lt;- women %&amp;gt;% filter(is.</description>
+    </item>
+    
+    <item>
+      <title>Probability</title>
+      <link>/week-06/day-1/probability/</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-06/day-1/probability/</guid>
+      <description>library(gtools)library(prob)library(tidyverse)Question 1If I roll a six-sided dice once, what is the probability of getting a number less than 5?
+d6_lt5 &amp;lt;- rolldie(1) %&amp;gt;% filter(X1 &amp;lt; 5)nrow(d6_lt5)/nrow(rolldie(1))## [1] 0.6666667Question 2How many outcomes are there in the sample space of an experiment in which we toss three dice?
+nrow(rolldie(3))## [1] 216Question 3In an experiment where we roll four dice:</description>
+    </item>
+    
+    <item>
+      <title>dplyr Homework</title>
+      <link>/week-03/day-1/1-dplyr/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-03/day-1/1-dplyr/</guid>
+      <description>library(tidyverse)MVPdrinks &amp;lt;- read_csv(&amp;quot;data/starbucks_drinkMenu_expanded.csv&amp;quot;)head(drinks, 5)## # A tibble: 5 x 18## Beverage_catego~ Beverage Beverage_prep Calories `Total Fat (g)`## &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; ## 1 Coffee Brewed ~ Short 3 0.1 ## 2 Coffee Brewed ~ Tall 4 0.1 ## 3 Coffee Brewed ~ Grande 5 0.1 ## 4 Coffee Brewed ~ Venti 5 0.1 ## 5 Classic Espress~ Caffè L~ Short Nonfat~ 70 0.</description>
+    </item>
+    
+    <item>
+      <title>Connecting to Remote Databases in R</title>
+      <link>/week-02/day-2/connecting-to-remote-databases/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-02/day-2/connecting-to-remote-databases/</guid>
+      <description>library(keyring)library(RPostgreSQL)MVPLocal PostgreSQL Connectionskeyring_unlock(&amp;quot;local&amp;quot;)local_db &amp;lt;- dbConnect(drv = PostgreSQL(),user = key_get(&amp;quot;postgresql_username&amp;quot;, keyring = &amp;quot;local&amp;quot;),password = key_get(&amp;quot;postgresql_password&amp;quot;, keyring = &amp;quot;local&amp;quot;),dbname = &amp;quot;wrestling&amp;quot;,host = &amp;quot;localhost&amp;quot;)keyring_lock(&amp;quot;local&amp;quot;)List of WrestlersdbGetQuery(local_db,&amp;quot;SELECT * FROM wrestlers&amp;quot;)Data Typesid: intborn: chrname: chrgender: chrwin_percent: dbltotal_matches: intRemote PostgreSQL Connectionskeyring_unlock(&amp;quot;remote&amp;quot;)PostgreSQL(max.con = 2) # Set maximum simultaneous connections to 2remote_db &amp;lt;- dbConnect(drv = PostgreSQL(),user = key_get(&amp;quot;wrestling_username&amp;quot;, keyring = &amp;quot;remote&amp;quot;),password = key_get(&amp;quot;wrestling_password&amp;quot;, keyring = &amp;quot;remote&amp;quot;),dbname = &amp;quot;mvhbdgdk&amp;quot;,host = &amp;quot;manny.</description>
+    </item>
+    
+    <item>
+      <title>Reading in Data</title>
+      <link>/week-02/day-1/reading-in-data/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-02/day-1/reading-in-data/</guid>
+      <description>MVPstate_income_data &amp;lt;- read_csv(&amp;quot;data/state_income_data.csv&amp;quot;)To specify column names, apply the argument col_names to the function read_csv.
+If col_names is a character vector, the values will be used as the names of the columns, and the first row of the input will be read into the first row of the output data frame.
+cars &amp;lt;- read_csv(&amp;quot;data/cars.csv&amp;quot;, col_types = &amp;quot;cddddl&amp;quot;)The scotland dataset has leading whitespace that needs to be trimmed from each element.</description>
+    </item>
+    
+    <item>
+      <title>Conditionals, Functions, and Loops</title>
+      <link>/week-01/day-5/conditionals-functions-loops/</link>
+      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-01/day-5/conditionals-functions-loops/</guid>
+      <description>MVPif Statements and FunctionsAlgebram15a4 &amp;lt;- function(input) {output &amp;lt;- input * 15output &amp;lt;- output + 4return(output)}m15a4(1:10)## [1] 19 34 49 64 79 94 109 124 139 154Thought Exercise: Verbose OutputThe following just tests an idea I had about making a function give a “verbose” output. If a user wants to see what function m15a4 is doing to the input to reach the output, they can use m15a4_verbose(x, verbose = TRUE) to get a character output similar to an algebraic expression.</description>
+    </item>
+    
+    <item>
+      <title>Best Practice</title>
+      <link>/week-01/day-3/1-best-practice/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-01/day-3/1-best-practice/</guid>
+      <description>InitialisationCall libraries first.
+TidyverseRead the tidyverse style guide. CodeClan’s preference is snake_case.
+# Use snake case for variable namesmy_variable &amp;lt;- 0my_data &amp;lt;- read.csv(&amp;quot;file&amp;quot;)big_function(something = &amp;quot;that&amp;quot;,requires = &amp;quot;many&amp;quot;,arguments = &amp;quot;yo&amp;quot;)StylerStyler can be accessed through the Addins menu.
+</description>
+    </item>
+    
+    <item>
+      <title>Errors</title>
+      <link>/week-01/day-3/2-conflicts/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-01/day-3/2-conflicts/</guid>
+      <description>select(mtcars, &amp;quot;mpg&amp;quot;)dplyr::select(mtcars, &amp;quot;mpg&amp;quot;)</description>
+    </item>
+    
+    <item>
+      <title>Data Types</title>
+      <link>/week-01/day-2/data-types/</link>
+      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/week-01/day-2/data-types/</guid>
+      <description>library(tidyquant)library(dplyr)MVP, Part 1stock_prices&amp;lt;-c(23,27,23,21,34,24,25,30,37,30)day_of_week&amp;lt;-rep(c(&amp;quot;Monday&amp;quot;,&amp;quot;Tuesday&amp;quot;,&amp;quot;Wednesday&amp;quot;,&amp;quot;Thursday&amp;quot;,&amp;quot;Friday&amp;quot;),2)day_of_week_factor&amp;lt;-as.factor(day_of_week)named_stock_prices&amp;lt;-stock_pricesnames(named_stock_prices)&amp;lt;-day_of_weekstock_data&amp;lt;-data.frame(stock_prices,day_of_week)stock_list&amp;lt;-list(&amp;quot;Stock Prices&amp;quot;=stock_prices,&amp;quot;Day of Week&amp;quot;=day_of_week,&amp;quot;Data Frame&amp;quot;=stock_data)MVP, Part 2stock_prices[4]## [1] 21stock_prices[5]## [1] 34stock_prices[6]## [1] 24stock_prices[stock_prices&amp;gt;30]## [1] 34 37stock_data$day_of_week## [1] Monday Tuesday Wednesday Thursday Friday Monday Tuesday ## [8] Wednesday Thursday Friday ## Levels: Friday Monday Thursday Tuesday Wednesdaystock_data[stock_data$stock_prices&amp;gt;30,]## stock_prices day_of_week## 5 34 Friday## 9 37 Thursdaystock_data[,1]## [1] 23 27 23 21 34 24 25 30 37 30stock_data[3,]## stock_prices day_of_week## 3 23 Wednesdaystock_data[3,1]## [1] 23stock_list$`Data Frame`## stock_prices day_of_week## 1 23 Monday## 2 27 Tuesday## 3 23 Wednesday## 4 21 Thursday## 5 34 Friday## 6 24 Monday## 7 25 Tuesday## 8 30 Wednesday## 9 37 Thursday## 10 30 FridayExtension# help(package=&amp;quot;tidyquant&amp;quot;)aapl_stock_prices&amp;lt;-tq_get(&amp;quot;AAPL&amp;quot;, get=&amp;quot;stock.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      
+      <guid>/about/</guid>
+      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/week-02/day-5/1-sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/week-02/day-5/1-sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/week-06/day-2/distributions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/week-06/day-2/distributions/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

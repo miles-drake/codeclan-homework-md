@@ -12,51 +12,13 @@
     
     
     <item>
-      <title>Decathlon Analysis</title>
-      <link>/week-04/day-1/1-decathlon/documentation_and_analysis/decathlon_analysis/</link>
+      <title>Confidence Intervals Minilab</title>
+      <link>/week-06/day-3/confidence-intervals-minilab/</link>
       <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/week-04/day-1/1-decathlon/documentation_and_analysis/decathlon_analysis/</guid>
-      <description>Who had the longest long jump seen in the data?decathlon_analysis$long_jump_max &amp;lt;- decathlon_data %&amp;gt;% filter(event_name == &amp;quot;Long Jump&amp;quot;) %&amp;gt;% select(name,event_score) %&amp;gt;% arrange(desc(event_score)) %&amp;gt;% head(1)## # A tibble: 1 x 2## name event_score## &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt;## 1 Clay 7.96The longest recorded long jump in this data set was achieved by Clay, with a distance of 7.96 m.
-What was the average 100m time in each competition?</description>
-    </item>
-    
-    <item>
-      <title>Dog Owners&#39; Survey</title>
-      <link>/week-04/day-1/6-dog-survey/documentation_and_analysis/dog_survey_documentation/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-04/day-1/6-dog-survey/documentation_and_analysis/dog_survey_documentation/</guid>
-      <description>The dog owners’ survey is a free-hand data set, comprised of British dog owners. This data set collates the self-reported size, sex, and age of their dogs; the amount that they spend on dog food (in GBP); and the respondant’s contact information.
-Complete Data Set## # A tibble: 298 x 9## id title first_name last_name email amount_spent_on~ dog_size dog_male## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;lgl&amp;gt; ## 1 1 Mrs Frasquito Dene fden~ 80.</description>
-    </item>
-    
-    <item>
-      <title>Introduction to `ggplot2` Homework</title>
-      <link>/week-05/day-1/ggplot/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-05/day-1/ggplot/</guid>
-      <description>library(CodeClanData)library(tidyverse)MVPQuestion 1Load in the libraries you need, and look at the backpack data. Take note of variable names and dimensions.
-head(backpack)## backpack_weight body_weight ratio back_problems major year sex## 1 9 125 0.0720000 1 Bio 3 Female## 2 8 195 0.0410256 0 Philosophy 5 Male## 3 10 120 0.0833333 1 GRC 4 Female## 4 6 155 0.0387097 0 CSC 6 Male## 5 8 180 0.</description>
-    </item>
-    
-    <item>
-      <title>Tidyverse Consolidation Homework</title>
-      <link>/week-03/day-3/codeclan-tweets/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-03/day-3/codeclan-tweets/</guid>
-      <description>library(tidyverse)MVPtweets &amp;lt;- read_csv(file(&amp;quot;data/code_clan_tweets_utf-8.csv&amp;quot;, encoding = &amp;quot;UTF-8&amp;quot;))nrow(tweets)## [1] 234ncol(tweets)## [1] 27colnames(tweets)## [1] &amp;quot;tweet_id&amp;quot; &amp;quot;user_id&amp;quot; &amp;quot;created_at&amp;quot; ## [4] &amp;quot;screen_name&amp;quot; &amp;quot;text&amp;quot; &amp;quot;source&amp;quot; ## [7] &amp;quot;display_text_width&amp;quot; &amp;quot;reply_to_status_id&amp;quot; &amp;quot;reply_to_user_id&amp;quot; ## [10] &amp;quot;reply_to_screen_name&amp;quot; &amp;quot;is_quote&amp;quot; &amp;quot;is_retweet&amp;quot; ## [13] &amp;quot;favorite_count&amp;quot; &amp;quot;retweet_count&amp;quot; &amp;quot;quote_count&amp;quot; ## [16] &amp;quot;reply_count&amp;quot; &amp;quot;hashtags&amp;quot; &amp;quot;symbols&amp;quot; ## [19] &amp;quot;urls_url&amp;quot; &amp;quot;urls_t.co&amp;quot; &amp;quot;urls_expanded_url&amp;quot; ## [22] &amp;quot;media_type&amp;quot; &amp;quot;retweet_source&amp;quot; &amp;quot;retweet_favorite_count&amp;quot;## [25] &amp;quot;retweet_retweet_count&amp;quot; &amp;quot;retweet_user_id&amp;quot; &amp;quot;retweet_location&amp;quot;ggplot(tweets) +aes(y = favorite_count) +geom_boxplot()tweets %&amp;gt;% filter(is_quote == FALSE) %&amp;gt;% summarise(sum(favorite_count)) %&amp;gt;% as.</description>
-    </item>
-    
-    <item>
-      <title>World Bank Data</title>
-      <link>/week-03/day-2/1-world-bank-data/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-03/day-2/1-world-bank-data/</guid>
-      <description>library(janitor)library(tidyverse)library(outliers)MVPwomen &amp;lt;- read_csv(&amp;quot;data/women_in_gov.csv&amp;quot;, skip = 4)women &amp;lt;- rename(women,&amp;quot;country_name&amp;quot; = &amp;quot;Country Name&amp;quot;,&amp;quot;country_code&amp;quot; = &amp;quot;Country Code&amp;quot;,&amp;quot;indicator_name&amp;quot; = &amp;quot;Indicator Name&amp;quot;,&amp;quot;indicator_code&amp;quot; = &amp;quot;Indicator Code&amp;quot;)unique(women$indicator_name)## [1] &amp;quot;Proportion of seats held by women in national parliaments (%)&amp;quot;unique(women$indicator_code)## [1] &amp;quot;SG.GEN.PARL.ZS&amp;quot;unique(women$X64)## [1] NAwomen &amp;lt;- select(women,-indicator_name,-indicator_code,-X64)women &amp;lt;- pivot_longer(women,cols = &amp;quot;1960&amp;quot;:&amp;quot;2018&amp;quot;,names_to = &amp;quot;year&amp;quot;,values_to = &amp;quot;percent&amp;quot;)women_na &amp;lt;- women %&amp;gt;% filter(is.</description>
+      <guid>/week-06/day-3/confidence-intervals-minilab/</guid>
+      <description>library(infer)library(janitor)library(tidyverse)Data SetThe data set used for this exercise, ames.csv, explores the prices and condition of houses sold in in Ames, Iowa over a number of years.
+ames &amp;lt;- read_csv(&amp;quot;data/ames.csv&amp;quot;) %&amp;gt;% clean_names()glimpse(ames)## Observations: 2,930## Variables: 82## $ order &amp;lt;dbl&amp;gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ...## $ pid &amp;lt;dbl&amp;gt; 526301100, 526350040, 526351010, 526353030, 5271050.</description>
     </item>
     
     <item>

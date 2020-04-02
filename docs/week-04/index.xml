@@ -1,35 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Week-04s on Miles Drake&#39;s CodeClan Homework</title>
-    <link>/week-04/</link>
-    <description>Recent content in Week-04s on Miles Drake&#39;s CodeClan Homework</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/week-04/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Decathlon Analysis</title>
-      <link>/week-04/day-1/1-decathlon/documentation_and_analysis/decathlon_analysis/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-04/day-1/1-decathlon/documentation_and_analysis/decathlon_analysis/</guid>
-      <description>Who had the longest long jump seen in the data?decathlon_analysis$long_jump_max &amp;lt;- decathlon_data %&amp;gt;% filter(event_name == &amp;quot;Long Jump&amp;quot;) %&amp;gt;% select(name,event_score) %&amp;gt;% arrange(desc(event_score)) %&amp;gt;% head(1)## # A tibble: 1 x 2## name event_score## &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt;## 1 Clay 7.96The longest recorded long jump in this data set was achieved by Clay, with a distance of 7.96 m.
-What was the average 100m time in each competition?</description>
-    </item>
-    
-    <item>
-      <title>Dog Owners&#39; Survey</title>
-      <link>/week-04/day-1/6-dog-survey/documentation_and_analysis/dog_survey_documentation/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-04/day-1/6-dog-survey/documentation_and_analysis/dog_survey_documentation/</guid>
-      <description>The dog owners’ survey is a free-hand data set, comprised of British dog owners. This data set collates the self-reported size, sex, and age of their dogs; the amount that they spend on dog food (in GBP); and the respondant’s contact information.
-Complete Data Set## # A tibble: 298 x 9## id title first_name last_name email amount_spent_on~ dog_size dog_male## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;lgl&amp;gt; ## 1 1 Mrs Frasquito Dene fden~ 80.</description>
-    </item>
-    
-  </channel>
-</rss>

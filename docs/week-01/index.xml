@@ -1,54 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Week-01s on Miles Drake&#39;s CodeClan Homework</title>
-    <link>/week-01/</link>
-    <description>Recent content in Week-01s on Miles Drake&#39;s CodeClan Homework</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    <lastBuildDate>Fri, 28 Feb 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/week-01/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Conditionals, Functions, and Loops</title>
-      <link>/week-01/day-5/conditionals-functions-loops/</link>
-      <pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-01/day-5/conditionals-functions-loops/</guid>
-      <description>MVPif Statements and FunctionsAlgebram15a4 &amp;lt;- function(input) {output &amp;lt;- input * 15output &amp;lt;- output + 4return(output)}m15a4(1:10)## [1] 19 34 49 64 79 94 109 124 139 154Thought Exercise: Verbose OutputThe following just tests an idea I had about making a function give a “verbose” output. If a user wants to see what function m15a4 is doing to the input to reach the output, they can use m15a4_verbose(x, verbose = TRUE) to get a character output similar to an algebraic expression.</description>
-    </item>
-    
-    <item>
-      <title>Best Practice</title>
-      <link>/week-01/day-3/1-best-practice/</link>
-      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-01/day-3/1-best-practice/</guid>
-      <description>InitialisationCall libraries first.
-TidyverseRead the tidyverse style guide. CodeClan’s preference is snake_case.
-# Use snake case for variable namesmy_variable &amp;lt;- 0my_data &amp;lt;- read.csv(&amp;quot;file&amp;quot;)big_function(something = &amp;quot;that&amp;quot;,requires = &amp;quot;many&amp;quot;,arguments = &amp;quot;yo&amp;quot;)StylerStyler can be accessed through the Addins menu.
-</description>
-    </item>
-    
-    <item>
-      <title>Errors</title>
-      <link>/week-01/day-3/2-conflicts/</link>
-      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-01/day-3/2-conflicts/</guid>
-      <description>select(mtcars, &amp;quot;mpg&amp;quot;)dplyr::select(mtcars, &amp;quot;mpg&amp;quot;)</description>
-    </item>
-    
-    <item>
-      <title>Data Types</title>
-      <link>/week-01/day-2/data-types/</link>
-      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-01/day-2/data-types/</guid>
-      <description>library(tidyquant)library(dplyr)MVP, Part 1stock_prices&amp;lt;-c(23,27,23,21,34,24,25,30,37,30)day_of_week&amp;lt;-rep(c(&amp;quot;Monday&amp;quot;,&amp;quot;Tuesday&amp;quot;,&amp;quot;Wednesday&amp;quot;,&amp;quot;Thursday&amp;quot;,&amp;quot;Friday&amp;quot;),2)day_of_week_factor&amp;lt;-as.factor(day_of_week)named_stock_prices&amp;lt;-stock_pricesnames(named_stock_prices)&amp;lt;-day_of_weekstock_data&amp;lt;-data.frame(stock_prices,day_of_week)stock_list&amp;lt;-list(&amp;quot;Stock Prices&amp;quot;=stock_prices,&amp;quot;Day of Week&amp;quot;=day_of_week,&amp;quot;Data Frame&amp;quot;=stock_data)MVP, Part 2stock_prices[4]## [1] 21stock_prices[5]## [1] 34stock_prices[6]## [1] 24stock_prices[stock_prices&amp;gt;30]## [1] 34 37stock_data$day_of_week## [1] Monday Tuesday Wednesday Thursday Friday Monday Tuesday ## [8] Wednesday Thursday Friday ## Levels: Friday Monday Thursday Tuesday Wednesdaystock_data[stock_data$stock_prices&amp;gt;30,]## stock_prices day_of_week## 5 34 Friday## 9 37 Thursdaystock_data[,1]## [1] 23 27 23 21 34 24 25 30 37 30stock_data[3,]## stock_prices day_of_week## 3 23 Wednesdaystock_data[3,1]## [1] 23stock_list$`Data Frame`## stock_prices day_of_week## 1 23 Monday## 2 27 Tuesday## 3 23 Wednesday## 4 21 Thursday## 5 34 Friday## 6 24 Monday## 7 25 Tuesday## 8 30 Wednesday## 9 37 Thursday## 10 30 FridayExtension# help(package=&amp;quot;tidyquant&amp;quot;)aapl_stock_prices&amp;lt;-tq_get(&amp;quot;AAPL&amp;quot;, get=&amp;quot;stock.</description>
-    </item>
-    
-  </channel>
-</rss>

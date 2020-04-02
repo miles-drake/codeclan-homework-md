@@ -1,44 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Week-02s on Miles Drake&#39;s CodeClan Homework</title>
-    <link>/week-02/</link>
-    <description>Recent content in Week-02s on Miles Drake&#39;s CodeClan Homework</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    <lastBuildDate>Tue, 03 Mar 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/week-02/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Connecting to Remote Databases in R</title>
-      <link>/week-02/day-2/connecting-to-remote-databases/</link>
-      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-02/day-2/connecting-to-remote-databases/</guid>
-      <description>library(keyring)library(RPostgreSQL)MVPLocal PostgreSQL Connectionskeyring_unlock(&amp;quot;local&amp;quot;)local_db &amp;lt;- dbConnect(drv = PostgreSQL(),user = key_get(&amp;quot;postgresql_username&amp;quot;, keyring = &amp;quot;local&amp;quot;),password = key_get(&amp;quot;postgresql_password&amp;quot;, keyring = &amp;quot;local&amp;quot;),dbname = &amp;quot;wrestling&amp;quot;,host = &amp;quot;localhost&amp;quot;)keyring_lock(&amp;quot;local&amp;quot;)List of WrestlersdbGetQuery(local_db,&amp;quot;SELECT * FROM wrestlers&amp;quot;)Data Typesid: intborn: chrname: chrgender: chrwin_percent: dbltotal_matches: intRemote PostgreSQL Connectionskeyring_unlock(&amp;quot;remote&amp;quot;)PostgreSQL(max.con = 2) # Set maximum simultaneous connections to 2remote_db &amp;lt;- dbConnect(drv = PostgreSQL(),user = key_get(&amp;quot;wrestling_username&amp;quot;, keyring = &amp;quot;remote&amp;quot;),password = key_get(&amp;quot;wrestling_password&amp;quot;, keyring = &amp;quot;remote&amp;quot;),dbname = &amp;quot;mvhbdgdk&amp;quot;,host = &amp;quot;manny.</description>
-    </item>
-    
-    <item>
-      <title>Reading in Data</title>
-      <link>/week-02/day-1/reading-in-data/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-02/day-1/reading-in-data/</guid>
-      <description>MVPstate_income_data &amp;lt;- read_csv(&amp;quot;data/state_income_data.csv&amp;quot;)To specify column names, apply the argument col_names to the function read_csv.
-If col_names is a character vector, the values will be used as the names of the columns, and the first row of the input will be read into the first row of the output data frame.
-cars &amp;lt;- read_csv(&amp;quot;data/cars.csv&amp;quot;, col_types = &amp;quot;cddddl&amp;quot;)The scotland dataset has leading whitespace that needs to be trimmed from each element.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/week-02/day-5/1-sql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/week-02/day-5/1-sql/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
-</rss>

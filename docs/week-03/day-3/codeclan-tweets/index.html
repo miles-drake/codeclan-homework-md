@@ -1,310 +1,0 @@
-<!DOCTYPE html>
-<html lang="en-gb">
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Tidyverse Consolidation Homework - Miles Drake&#39;s CodeClan Homework</title>
-<meta name="description" content="DE3 (data analysis) cohort">
-<meta name="generator" content="Hugo 0.65.3" />
-<link href="../../../index.xml" rel="alternate" type="application/rss+xml">
-<link rel="canonical" href="../../../week-03/day-3/codeclan-tweets/">
-<link rel="stylesheet" href="../../../css/theme.min.css">
-<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-<link rel="stylesheet" href="../../../css/chroma.min.css">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
-<script src="../../../js/bundle.js"></script><style>
-:root {}
-</style>
-<meta property="og:title" content="Tidyverse Consolidation Homework" />
-<meta property="og:description" content="library(tidyverse)MVPtweets &lt;- read_csv(file(&quot;data/code_clan_tweets_utf-8.csv&quot;, encoding = &quot;UTF-8&quot;))nrow(tweets)## [1] 234ncol(tweets)## [1] 27colnames(tweets)## [1] &quot;tweet_id&quot; &quot;user_id&quot; &quot;created_at&quot; ## [4] &quot;screen_name&quot; &quot;text&quot; &quot;source&quot; ## [7] &quot;display_text_width&quot; &quot;reply_to_status_id&quot; &quot;reply_to_user_id&quot; ## [10] &quot;reply_to_screen_name&quot; &quot;is_quote&quot; &quot;is_retweet&quot; ## [13] &quot;favorite_count&quot; &quot;retweet_count&quot; &quot;quote_count&quot; ## [16] &quot;reply_count&quot; &quot;hashtags&quot; &quot;symbols&quot; ## [19] &quot;urls_url&quot; &quot;urls_t.co&quot; &quot;urls_expanded_url&quot; ## [22] &quot;media_type&quot; &quot;retweet_source&quot; &quot;retweet_favorite_count&quot;## [25] &quot;retweet_retweet_count&quot; &quot;retweet_user_id&quot; &quot;retweet_location&quot;ggplot(tweets) &#43;aes(y = favorite_count) &#43;geom_boxplot()tweets %&gt;% filter(is_quote == FALSE) %&gt;% summarise(sum(favorite_count)) %&gt;% as." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/week-03/day-3/codeclan-tweets/" />
-<meta property="og:image" content="/images/og-image.png"/>
-<meta property="article:published_time" content="2020-04-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-04-01T00:00:00+00:00" /><meta property="og:site_name" content="Hugo Techdoc Theme" />
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="/images/og-image.png"/>
-
-<meta name="twitter:title" content="Tidyverse Consolidation Homework"/>
-<meta name="twitter:description" content="library(tidyverse)MVPtweets &lt;- read_csv(file(&quot;data/code_clan_tweets_utf-8.csv&quot;, encoding = &quot;UTF-8&quot;))nrow(tweets)## [1] 234ncol(tweets)## [1] 27colnames(tweets)## [1] &quot;tweet_id&quot; &quot;user_id&quot; &quot;created_at&quot; ## [4] &quot;screen_name&quot; &quot;text&quot; &quot;source&quot; ## [7] &quot;display_text_width&quot; &quot;reply_to_status_id&quot; &quot;reply_to_user_id&quot; ## [10] &quot;reply_to_screen_name&quot; &quot;is_quote&quot; &quot;is_retweet&quot; ## [13] &quot;favorite_count&quot; &quot;retweet_count&quot; &quot;quote_count&quot; ## [16] &quot;reply_count&quot; &quot;hashtags&quot; &quot;symbols&quot; ## [19] &quot;urls_url&quot; &quot;urls_t.co&quot; &quot;urls_expanded_url&quot; ## [22] &quot;media_type&quot; &quot;retweet_source&quot; &quot;retweet_favorite_count&quot;## [25] &quot;retweet_retweet_count&quot; &quot;retweet_user_id&quot; &quot;retweet_location&quot;ggplot(tweets) &#43;aes(y = favorite_count) &#43;geom_boxplot()tweets %&gt;% filter(is_quote == FALSE) %&gt;% summarise(sum(favorite_count)) %&gt;% as."/>
-<meta itemprop="name" content="Tidyverse Consolidation Homework">
-<meta itemprop="description" content="library(tidyverse)MVPtweets &lt;- read_csv(file(&quot;data/code_clan_tweets_utf-8.csv&quot;, encoding = &quot;UTF-8&quot;))nrow(tweets)## [1] 234ncol(tweets)## [1] 27colnames(tweets)## [1] &quot;tweet_id&quot; &quot;user_id&quot; &quot;created_at&quot; ## [4] &quot;screen_name&quot; &quot;text&quot; &quot;source&quot; ## [7] &quot;display_text_width&quot; &quot;reply_to_status_id&quot; &quot;reply_to_user_id&quot; ## [10] &quot;reply_to_screen_name&quot; &quot;is_quote&quot; &quot;is_retweet&quot; ## [13] &quot;favorite_count&quot; &quot;retweet_count&quot; &quot;quote_count&quot; ## [16] &quot;reply_count&quot; &quot;hashtags&quot; &quot;symbols&quot; ## [19] &quot;urls_url&quot; &quot;urls_t.co&quot; &quot;urls_expanded_url&quot; ## [22] &quot;media_type&quot; &quot;retweet_source&quot; &quot;retweet_favorite_count&quot;## [25] &quot;retweet_retweet_count&quot; &quot;retweet_user_id&quot; &quot;retweet_location&quot;ggplot(tweets) &#43;aes(y = favorite_count) &#43;geom_boxplot()tweets %&gt;% filter(is_quote == FALSE) %&gt;% summarise(sum(favorite_count)) %&gt;% as.">
-<meta itemprop="datePublished" content="2020-04-01T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-04-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="537">
-<meta itemprop="image" content="/images/og-image.png"/>
-
-
-
-<meta itemprop="keywords" content="" /></head>
-<body><div class="container"><header>
-<h1>Miles Drake&#39;s CodeClan Homework</h1>
-<a href="https://github.com/thingsym/hugo-theme-techdoc" class="github"><i class="fab fa-github"></i></a>
-<p class="description">DE3 (data analysis) cohort</p>
-
-</header>
-<div class="global-menu">
-<nav>
-<ul>
-<li><a href="../../../">Home</a></li>
-<li><a href="https://twitter.com/thingsym">Twitter</a></li></ul>
-</nav>
-</div>
-<div class="content-container">
-<main><h1>Tidyverse Consolidation Homework</h1>
-
-
-
-<pre class="r"><code>library(tidyverse)</code></pre>
-<div id="mvp" class="section level1">
-<h1>MVP</h1>
-<div id="section" class="section level2">
-<h2></h2>
-<pre class="r"><code>tweets &lt;- read_csv(file(&quot;data/code_clan_tweets_utf-8.csv&quot;, encoding = &quot;UTF-8&quot;))</code></pre>
-<pre class="r"><code>nrow(tweets)</code></pre>
-<pre><code>## [1] 234</code></pre>
-<pre class="r"><code>ncol(tweets)</code></pre>
-<pre><code>## [1] 27</code></pre>
-<pre class="r"><code>colnames(tweets)</code></pre>
-<pre><code>##  [1] &quot;tweet_id&quot;               &quot;user_id&quot;                &quot;created_at&quot;            
-##  [4] &quot;screen_name&quot;            &quot;text&quot;                   &quot;source&quot;                
-##  [7] &quot;display_text_width&quot;     &quot;reply_to_status_id&quot;     &quot;reply_to_user_id&quot;      
-## [10] &quot;reply_to_screen_name&quot;   &quot;is_quote&quot;               &quot;is_retweet&quot;            
-## [13] &quot;favorite_count&quot;         &quot;retweet_count&quot;          &quot;quote_count&quot;           
-## [16] &quot;reply_count&quot;            &quot;hashtags&quot;               &quot;symbols&quot;               
-## [19] &quot;urls_url&quot;               &quot;urls_t.co&quot;              &quot;urls_expanded_url&quot;     
-## [22] &quot;media_type&quot;             &quot;retweet_source&quot;         &quot;retweet_favorite_count&quot;
-## [25] &quot;retweet_retweet_count&quot;  &quot;retweet_user_id&quot;        &quot;retweet_location&quot;</code></pre>
-</div>
-<div id="section-1" class="section level2">
-<h2></h2>
-<pre class="r"><code>ggplot(tweets) +
-  aes(y = favorite_count) +
-  geom_boxplot()</code></pre>
-<p><img src="../../../week-03/day-3/codeclan-tweets_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-</div>
-<div id="section-2" class="section level2">
-<h2></h2>
-<pre class="r"><code>tweets %&gt;% 
-  filter(is_quote == FALSE) %&gt;% 
-  summarise(
-    sum(favorite_count)
-  ) %&gt;% 
-  as.integer()</code></pre>
-<pre><code>## [1] 425</code></pre>
-</div>
-<div id="section-3" class="section level2">
-<h2></h2>
-<pre class="r"><code>tweets %&gt;% 
-  filter(is_quote == FALSE) %&gt;% 
-  group_by(source) %&gt;% 
-  summarise(
-    mean_retweet_count = mean(retweet_count)
-  ) %&gt;% 
-  arrange(
-    desc(mean_retweet_count),
-    source
-  ) %&gt;% 
-  mutate(
-    mean_retweet_count = round(mean_retweet_count, 2)
-  )</code></pre>
-<pre><code>## # A tibble: 6 x 2
-##   source             mean_retweet_count
-##   &lt;chr&gt;                           &lt;dbl&gt;
-## 1 TweetDeck                        5   
-## 2 Tweetbot for Mac                 4   
-## 3 Twitter for iPhone               3.05
-## 4 Twitter Web App                  2.48
-## 5 Twitter Web Client               2   
-## 6 Hootsuite Inc.                   1.43</code></pre>
-</div>
-<div id="section-4" class="section level2">
-<h2></h2>
-<pre class="r"><code>tweets %&gt;% 
-  select(
-    media_type,
-    favorite_count
-  ) %&gt;% 
-  mutate(
-    media_type = replace_na(media_type, &quot;text&quot;)
-  ) %&gt;% 
-  group_by(media_type) %&gt;% 
-  summarise(
-    total_likes = n()
-  ) %&gt;% 
-  arrange(
-    desc(total_likes)
-  )</code></pre>
-<pre><code>## # A tibble: 2 x 2
-##   media_type total_likes
-##   &lt;chr&gt;            &lt;int&gt;
-## 1 text               145
-## 2 photo               89</code></pre>
-</div>
-<div id="section-5" class="section level2">
-<h2></h2>
-<pre class="r"><code>tweets %&gt;% 
-  select(text) %&gt;% 
-  mutate(
-    character_count = str_length(text)
-  ) %&gt;% 
-  summarise(
-    mean(character_count)
-  ) %&gt;% 
-  as.integer()</code></pre>
-<pre><code>## [1] 188</code></pre>
-</div>
-<div id="section-6" class="section level2">
-<h2></h2>
-<pre class="r"><code>tweets_info &lt;- read_csv(&quot;data/code_clan_info.csv&quot;)
-tweets_joined &lt;- inner_join(tweets, tweets_info, by = &quot;tweet_id&quot;)</code></pre>
-<pre class="r"><code>tweets_joined</code></pre>
-<pre><code>## # A tibble: 234 x 41
-##    tweet_id user_id created_at screen_name text  source display_text_wi~
-##       &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;
-##  1      347  3.25e9 23/05/19 ~ CodeClanSc~ @Cod~ Twitt~              100
-##  2      346  3.25e9 22/05/19 ~ CodeClanSc~ We t~ Twitt~              148
-##  3      345  3.25e9 22/05/19 ~ CodeClanSc~ A we~ Twitt~              140
-##  4      344  3.25e9 22/05/19 ~ CodeClanSc~ New ~ Twitt~              140
-##  5      343  3.25e9 22/05/19 ~ CodeClanSc~ Scot~ Twitt~              196
-##  6      342  3.25e9 21/05/19 ~ CodeClanSc~ RT @~ Twitt~              140
-##  7      341  3.25e9 21/05/19 ~ CodeClanSc~ @Tec~ Twitt~               29
-##  8      340  3.25e9 21/05/19 ~ CodeClanSc~ Cong~ Twitt~              139
-##  9      339  3.25e9 21/05/19 ~ CodeClanSc~ Is f~ Twitt~              261
-## 10      338  3.25e9 21/05/19 ~ CodeClanSc~ Scot~ Twitt~              233
-## # ... with 224 more rows, and 34 more variables: reply_to_status_id &lt;dbl&gt;,
-## #   reply_to_user_id &lt;dbl&gt;, reply_to_screen_name &lt;chr&gt;, is_quote &lt;lgl&gt;,
-## #   is_retweet &lt;lgl&gt;, favorite_count &lt;dbl&gt;, retweet_count &lt;dbl&gt;,
-## #   quote_count &lt;lgl&gt;, reply_count &lt;lgl&gt;, hashtags &lt;chr&gt;, symbols &lt;lgl&gt;,
-## #   urls_url &lt;chr&gt;, urls_t.co &lt;chr&gt;, urls_expanded_url &lt;chr&gt;, media_type &lt;chr&gt;,
-## #   retweet_source &lt;chr&gt;, retweet_favorite_count &lt;dbl&gt;,
-## #   retweet_retweet_count &lt;dbl&gt;, retweet_user_id &lt;dbl&gt;, retweet_location &lt;chr&gt;,
-## #   status_url &lt;chr&gt;, name &lt;chr&gt;, location &lt;chr&gt;, description &lt;chr&gt;, url &lt;chr&gt;,
-## #   protected &lt;lgl&gt;, followers_count &lt;dbl&gt;, friends_count &lt;dbl&gt;,
-## #   listed_count &lt;dbl&gt;, statuses_count &lt;dbl&gt;, favourites_count &lt;dbl&gt;,
-## #   account_created_at &lt;chr&gt;, verified &lt;lgl&gt;, profile_url &lt;chr&gt;</code></pre>
-</div>
-<div id="section-7" class="section level2">
-<h2></h2>
-<pre class="r"><code>codeclan_hashtags &lt;- tweets_joined %&gt;% 
-  select(
-    tweet_id,
-    hashtags
-  ) %&gt;% 
-  filter(
-    is.na(hashtags) == FALSE
-  ) %&gt;% 
-  mutate(
-    hashtags = str_to_lower(hashtags)
-  )</code></pre>
-<pre class="r"><code>codeclan_hashtags</code></pre>
-<pre><code>## # A tibble: 117 x 2
-##    tweet_id hashtags          
-##       &lt;dbl&gt; &lt;chr&gt;             
-##  1      345 dundee            
-##  2      344 tech              
-##  3      342 techmums          
-##  4      341 techmums          
-##  5      340 techmums          
-##  6      336 techmums          
-##  7      335 forensicshoeprints
-##  8      332 forensicshoeprints
-##  9      331 forensicshoeprints
-## 10      329 inverness         
-## # ... with 107 more rows</code></pre>
-</div>
-</div>
-<div class="edit-meta">
-Last updated on 1 Apr 2020
-
-
-<br>
-Published on 1 Apr 2020
-<br><a href="https://github.com/apologyfestival/codeclan_homework_miles/edit/master/content/week-03%5cday-3%5ccodeclan-tweets.html" class="edit-page"><i class="fas fa-pen-square"></i> Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="../../../week-03/" title="Week-03s"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Week-03s</a>
-<a class="nav nav-next" href="../../../week-03/day-2/1-world-bank-data/" title="World Bank Data">Next - World Bank Data <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-</nav><footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
-</footer>
-</main><div class="sidebar">
-
-<nav class="open-menu">
-<ul>
-<li class=""><a href="../../../">Home</a></li>
-
-<li class="parent"><a href="../../../week-03/">Week-03s</a>
-  
-<ul class="sub-menu">
-<li class="active"><a href="../../../week-03/day-3/codeclan-tweets/">Tidyverse Consolidation Homework</a></li>
-<li class=""><a href="../../../week-03/day-2/1-world-bank-data/">World Bank Data</a></li>
-<li class=""><a href="../../../week-03/day-1/1-dplyr/">dplyr Homework</a></li>
-</ul>
-  
-</li>
-
-<li class=""><a href="../../../week-04/">Week-04s</a>
-  
-<ul class="sub-menu">
-<li class=""><a href="../../../week-04/day-1/1-decathlon/documentation_and_analysis/decathlon_analysis/">Decathlon Analysis</a></li>
-<li class=""><a href="../../../week-04/day-1/6-dog-survey/documentation_and_analysis/dog_survey_documentation/">Dog Owners&#39; Survey</a></li>
-</ul>
-  
-</li>
-
-<li class=""><a href="../../../week-05/">Week-05s</a>
-  
-<ul class="sub-menu">
-<li class=""><a href="../../../week-05/day-1/ggplot/">Introduction to `ggplot2` Homework</a></li>
-</ul>
-  
-</li>
-
-<li class=""><a href="../../../week-06/">Week-06s</a>
-  
-<ul class="sub-menu">
-<li class=""><a href="../../../week-06/day-1/probability/">Probability</a></li>
-<li class=""><a href="../../../week-06/day-2/distributions/"></a></li>
-</ul>
-  
-</li>
-
-<li class=""><a href="../../../week-02/">Week-02s</a>
-  
-<ul class="sub-menu">
-<li class=""><a href="../../../week-02/day-2/connecting-to-remote-databases/">Connecting to Remote Databases in R</a></li>
-<li class=""><a href="../../../week-02/day-1/reading-in-data/">Reading in Data</a></li>
-<li class=""><a href="../../../week-02/day-5/1-sql/"></a></li>
-</ul>
-  
-</li>
-
-<li class=""><a href="../../../week-01/">Week-01s</a>
-  
-<ul class="sub-menu">
-<li class=""><a href="../../../week-01/day-5/conditionals-functions-loops/">Conditionals, Functions, and Loops</a></li>
-<li class=""><a href="../../../week-01/day-3/1-best-practice/">Best Practice</a></li>
-<li class=""><a href="../../../week-01/day-3/2-conflicts/">Errors</a></li>
-<li class=""><a href="../../../week-01/day-2/data-types/">Data Types</a></li>
-</ul>
-  
-</li>
-</ul>
-</nav>
-
-
-
-<div class="sidebar-footer"></div>
-</div>
-</div><a href="#" id="backtothetop-fixed" class="backtothetop"
- data-backtothetop-duration="600"
- data-backtothetop-easing="easeOutQuart"
- data-backtothetop-fixed-fadeIn="1000"
- data-backtothetop-fixed-fadeOut="1000"
- data-backtothetop-fixed-bottom="10"
- data-backtothetop-fixed-right="20">
-<span class="fa-layers fa-fw">
-<i class="fas fa-circle"></i>
-<i class="fas fa-arrow-circle-up"></i>
-</span></a>
-</div>
-</body>
-</html>

@@ -1,42 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Week-03s on Miles Drake&#39;s CodeClan Homework</title>
-    <link>/week-03/</link>
-    <description>Recent content in Week-03s on Miles Drake&#39;s CodeClan Homework</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/week-03/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Tidyverse Consolidation Homework</title>
-      <link>/week-03/day-3/codeclan-tweets/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-03/day-3/codeclan-tweets/</guid>
-      <description>library(tidyverse)MVPtweets &amp;lt;- read_csv(file(&amp;quot;data/code_clan_tweets_utf-8.csv&amp;quot;, encoding = &amp;quot;UTF-8&amp;quot;))nrow(tweets)## [1] 234ncol(tweets)## [1] 27colnames(tweets)## [1] &amp;quot;tweet_id&amp;quot; &amp;quot;user_id&amp;quot; &amp;quot;created_at&amp;quot; ## [4] &amp;quot;screen_name&amp;quot; &amp;quot;text&amp;quot; &amp;quot;source&amp;quot; ## [7] &amp;quot;display_text_width&amp;quot; &amp;quot;reply_to_status_id&amp;quot; &amp;quot;reply_to_user_id&amp;quot; ## [10] &amp;quot;reply_to_screen_name&amp;quot; &amp;quot;is_quote&amp;quot; &amp;quot;is_retweet&amp;quot; ## [13] &amp;quot;favorite_count&amp;quot; &amp;quot;retweet_count&amp;quot; &amp;quot;quote_count&amp;quot; ## [16] &amp;quot;reply_count&amp;quot; &amp;quot;hashtags&amp;quot; &amp;quot;symbols&amp;quot; ## [19] &amp;quot;urls_url&amp;quot; &amp;quot;urls_t.co&amp;quot; &amp;quot;urls_expanded_url&amp;quot; ## [22] &amp;quot;media_type&amp;quot; &amp;quot;retweet_source&amp;quot; &amp;quot;retweet_favorite_count&amp;quot;## [25] &amp;quot;retweet_retweet_count&amp;quot; &amp;quot;retweet_user_id&amp;quot; &amp;quot;retweet_location&amp;quot;ggplot(tweets) +aes(y = favorite_count) +geom_boxplot()tweets %&amp;gt;% filter(is_quote == FALSE) %&amp;gt;% summarise(sum(favorite_count)) %&amp;gt;% as.</description>
-    </item>
-    
-    <item>
-      <title>World Bank Data</title>
-      <link>/week-03/day-2/1-world-bank-data/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-03/day-2/1-world-bank-data/</guid>
-      <description>library(janitor)library(tidyverse)library(outliers)MVPwomen &amp;lt;- read_csv(&amp;quot;data/women_in_gov.csv&amp;quot;, skip = 4)women &amp;lt;- rename(women,&amp;quot;country_name&amp;quot; = &amp;quot;Country Name&amp;quot;,&amp;quot;country_code&amp;quot; = &amp;quot;Country Code&amp;quot;,&amp;quot;indicator_name&amp;quot; = &amp;quot;Indicator Name&amp;quot;,&amp;quot;indicator_code&amp;quot; = &amp;quot;Indicator Code&amp;quot;)unique(women$indicator_name)## [1] &amp;quot;Proportion of seats held by women in national parliaments (%)&amp;quot;unique(women$indicator_code)## [1] &amp;quot;SG.GEN.PARL.ZS&amp;quot;unique(women$X64)## [1] NAwomen &amp;lt;- select(women,-indicator_name,-indicator_code,-X64)women &amp;lt;- pivot_longer(women,cols = &amp;quot;1960&amp;quot;:&amp;quot;2018&amp;quot;,names_to = &amp;quot;year&amp;quot;,values_to = &amp;quot;percent&amp;quot;)women_na &amp;lt;- women %&amp;gt;% filter(is.</description>
-    </item>
-    
-    <item>
-      <title>dplyr Homework</title>
-      <link>/week-03/day-1/1-dplyr/</link>
-      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-03/day-1/1-dplyr/</guid>
-      <description>library(tidyverse)MVPdrinks &amp;lt;- read_csv(&amp;quot;data/starbucks_drinkMenu_expanded.csv&amp;quot;)head(drinks, 5)## # A tibble: 5 x 18## Beverage_catego~ Beverage Beverage_prep Calories `Total Fat (g)`## &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; ## 1 Coffee Brewed ~ Short 3 0.1 ## 2 Coffee Brewed ~ Tall 4 0.1 ## 3 Coffee Brewed ~ Grande 5 0.1 ## 4 Coffee Brewed ~ Venti 5 0.1 ## 5 Classic Espress~ Caffè L~ Short Nonfat~ 70 0.</description>
-    </item>
-    
-  </channel>
-</rss>

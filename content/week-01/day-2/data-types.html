@@ -88,7 +88,7 @@ names(named_stock_prices)&lt;-day_of_week</code></pre>
 <pre class="r"><code># help(package=&quot;tidyquant&quot;)</code></pre>
 <pre class="r"><code>aapl_stock_prices&lt;-tq_get(&quot;AAPL&quot;, get=&quot;stock.prices&quot;,from=&quot;2020-01-01&quot;)
 aapl_stock_prices[,c(&quot;date&quot;,&quot;close&quot;)]</code></pre>
-<pre><code>## # A tibble: 63 x 2
+<pre><code>## # A tibble: 62 x 2
 ##    date       close
 ##    &lt;date&gt;     &lt;dbl&gt;
 ##  1 2020-01-02  300.
@@ -101,7 +101,7 @@ aapl_stock_prices[,c(&quot;date&quot;,&quot;close&quot;)]</code></pre>
 ##  8 2020-01-13  317.
 ##  9 2020-01-14  313.
 ## 10 2020-01-15  311.
-## # ... with 53 more rows</code></pre>
+## # ... with 52 more rows</code></pre>
 <pre class="r"><code>subset(aapl_stock_prices,close&gt;mean(close))</code></pre>
 <pre><code>## # A tibble: 38 x 8
 ##    symbol date        open  high   low close   volume adjusted

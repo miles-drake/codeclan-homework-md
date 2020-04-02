@@ -6,20 +6,10 @@
     <description>Recent content in Week-06s on Miles Drake&#39;s CodeClan Homework</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/week-06/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Confidence Intervals Minilab</title>
-      <link>/week-06/day-3/confidence-intervals-minilab/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/week-06/day-3/confidence-intervals-minilab/</guid>
-      <description>library(infer)library(janitor)library(tidyverse)Data SetThe data set used for this exercise, ames.csv, explores the prices and condition of houses sold in in Ames, Iowa over a number of years.
-ames &amp;lt;- read_csv(&amp;quot;data/ames.csv&amp;quot;) %&amp;gt;% clean_names()glimpse(ames)## Observations: 2,930## Variables: 82## $ order &amp;lt;dbl&amp;gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ...## $ pid &amp;lt;dbl&amp;gt; 526301100, 526350040, 526351010, 526353030, 5271050.</description>
-    </item>
     
     <item>
       <title>Probability</title>

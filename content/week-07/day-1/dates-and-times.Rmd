@@ -106,6 +106,12 @@ flights <- flights %>%
       minute
     )
   )
+
+# Rearrange columns so the index is in the leading column
+flights <- flights[, c(
+  ncol(flights),
+  1:ncol(flights)-1
+)]
 ```
 
 ```{r}

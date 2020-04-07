@@ -1,0 +1,116 @@
+---
+title: "Dates and Times"
+date: "2020-04-07"
+---
+
+```{r include = FALSE}
+library(feasts)
+library(lubridate)
+library(nycflights13)
+library(tidyverse)
+library(tsibble)
+library(tsibbledata)
+```
+
+```{r include = FALSE}
+library(nycflights13)
+```
+
+This homework covers dates, times, and the `lubridate` package. We will be working with datasets from the `nycflights13` package, and these starting variables:
+
+```{r}
+date1 <- ymd_hms("2017-04-22 22:01:18")
+date2 <- ymd_hms("2001-11-07 10:09:56")
+```
+
+```{r}
+date1
+date2
+```
+
+The `nycflights13` package contains five different datasets:
+
+- `airlines`: airline names,
+- `airports`: metadata about airports,
+- `flights`: on time flight data for all flights that departed NYC,
+- `planes`: plane metadata for plane tailnumbers, and
+- `weather`: hourly meterological data.
+
+## Question 1
+*Extract the different components (year, month, mday, yday, wday) from the variable `date1.` Add the labels to the month and do not abbreviate the month labels.*
+
+```{r}
+year(date1)
+month(date1, label = TRUE, abbr = FALSE)
+mday(date1)
+yday(date1)
+wday(date1)
+```
+
+## Question 2
+*Add 14 days to your `date1` variable and store it in a variable called `next_fortnight`.*
+
+```{r}
+next_fortnight <- date1 + ddays(14)
+```
+
+*Take away 10 years from your `date2` variable, and store it in `previous_decade`.*
+
+```{r}
+previous_decade <- date2 - dyears(10)
+```
+
+## Question 3
+*Create a variable called `this_year` which contains today’s date. Then create an interval object which uses `this_year` and the `previous_decade` variable you made above. Store it in `interval_years`.*
+
+```{r}
+# Using lubridate's today() function instead of R's Sys.Date()
+this_year <- today()
+```
+
+```{r}
+lubridate::interval(
+  ymd(
+    paste(
+      year(previous_decade),
+      month(previous_decade),
+      day(previous_decade),
+      sep = "-"
+    )
+  ),
+  ymd(this_year)
+)
+```
+
+## Question 4
+*Change the time zone of both your date variables to "America/New_York", and call them `nyc_date1` and `nyc_date2`.*
+
+```{r}
+nyc_date1 <- with_tz(date1, "America/New_York")
+nyc_date2 <- with_tz(date2, "America/New_York")
+```
+
+```{r}
+nyc_date1
+nyc_date2
+```
+
+## Question 5
+*Use the flights data from the `nycflights13` dataset. Make a date-time column called `departure_date` from the `year`, `month`, `day`, `hour`, and `minute` variables in the `flights` tibble.*
+
+```{r}
+flights <- flights %>% 
+  mutate(
+    departure_date = make_datetime(
+      year,
+      month,
+      day,
+      hour,
+      minute
+    )
+  )
+```
+
+```{r}
+head(flights)
+```

@@ -4,12 +4,9 @@ date: "2020-04-07"
 ---
 
 ```{r include = FALSE}
-library(feasts)
 library(lubridate)
 library(nycflights13)
 library(tidyverse)
-library(tsibble)
-library(tsibbledata)
 ```
 
 ```{r include = FALSE}

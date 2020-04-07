@@ -1,0 +1,38 @@
+---
+title: "Time Series"
+date: "2020-04-06"
+---
+
+```{r}
+library(feasts)
+library(tidyverse)
+library(tsibble)
+library(tsibbledata)
+```
+
+```{r}
+library(nycflights13)
+```
+
+## Question 6
+*Start with the weather data from the `nycflights13` package. Select all the variables related to temperature, humidity, and precipitation, and pick out the key and index variables. Have a look at your data, and write a small description of the time series you observe.*
+
+## Question 7
+*Change the weather data into a tsibble.*
+
+## Question 8
+*Add a year and month column to your weather data, and create a basic line plot which shows the temperature data from each airport over time. Have a think back to what you learned in visualisation week, and think about whether plotting the whole time series in one go is adequate here? Write down your suggestions for what could be done to make a better and more informative plot.*
+
+## Question 9
+*Choose an appropriate rolling window and calculate a moving average for your weather temperature data for each airport origin. Create a useful plot which overlays the original time series data and the rolling average data. Make sure the graph is easy for others to understand.*
+
+*Finally, write a summary of why you chose the time window you did, and describe any trends you see.*
+
+## Question 10
+*Downsample your data so that you plot daily temperature data for each airport, instead of hourly data.*
+
+## Question 11
+*Decompose your daily time series data (the downsampled one) using an appopriate downsampling technique. Justify your choice, and explain what the decomposition shows you. Does it tell you anything about the seasonality that you couldn’t see before?*
+
+## Question 12
+*Extract features from your downsampled data. Which airport has the strongest trend?*

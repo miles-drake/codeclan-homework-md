@@ -1,0 +1,63 @@
+---
+title: "Spatial Analysis"
+date: "2020-04-07"
+---
+
+```{r include = FALSE}
+library(fable)
+library(lubridate)
+library(tidyverse)
+library(tsibble)
+library(tsibbledata)
+```
+
+This homework covers basic time series, time series modelling, and spatial visualisation and analysis.
+
+# MVP
+
+## Question 1
+*Load in the `nyc_bikes` data from the tsibbledata package. Have an initial look at it to see what you’re working with.*
+
+*Create three new columns: one that stores only the year the bike was used, one that stores only the month the bike was used, and one that stores the date. Use the data stored in `start_time` to create these new columns.*
+
+## Question 2
+*Summarise the number of bike hire counts by month.*
+
+*Make a plot of this data.*
+
+*What does this plot tell you about the time series? Do you think this downsampled data would be adequate to build a forecast with?*
+
+## Question 3
+*Summarise the number of bike hire counts by date.*
+
+*Make a plot of this new aggregated data.*
+
+*What does this plot tell you about the time series? Would this data be preferrable for time series forecasting compared to the monthly data?*
+
+## Question 4
+*Build the model. For this, we will test the **naive**, **mean**, and **snaive** model.*
+
+*\[...\] Use the advice given in the homework assignment to create the tibble. Fill any missing values, justifying the choice.*
+
+*Finally, build the models.*
+
+## Question 5
+*Build a forecast to predict bike use over the next four months.*
+
+*Plot the models alongside the data.*
+
+## Question 6
+*Test and calculate the model accuracy by building a forecast on a training set, then plotting the training set forecast against the real data.*
+
+## Question 7
+*Consider the forecast plots and accuracy values. Describe the  results.*
+
+## Question 8
+*Make a simple `ggplot` (`geom_point`) which plots the start longitude and latitudes of each bike. Create a separate facet for each `bike_id`. Colour the dots in by month of use.*
+
+*What does this tell us about which month each bike was used most in?*
+
+*Repeat the above, for the end longitude and latitudes.*
+
+## Question 9
+*Create an interactive leaflet plot which plots the start points of the city bikes.*

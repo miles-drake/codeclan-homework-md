@@ -17,6 +17,31 @@ library(nycflights13)
 ## Question 6
 *Start with the weather data from the `nycflights13` package. Select all the variables related to temperature, humidity, and precipitation, and pick out the key and index variables. Have a look at your data, and write a small description of the time series you observe.*
 
+```{r}
+weather <- weather %>% 
+  select(
+    origin, # Key variable
+    time_hour, # Index variable
+    temp,
+    humid,
+    precip
+  )
+```
+
+```{r}
+head(weather)
+```
+
+```{r}
+autoplot(weather)
+```
+
+The table above is the hourly meterological data for the LGA, JFK and EWR airports in New York City.
+
+The key variable is `origin`, the weather station that recorded the observation. The index variable is `time_hour`, the time of recording. Both of these will be used later to create a tsibble, a time series tibble.
+
+The observed variables are: `temp`, the temperature in F; `humid`, the relative humidity; amd `precip`, the precipitation in inches.
+
 ## Question 7
 *Change the weather data into a tsibble.*
 
@@ -31,8 +56,31 @@ library(nycflights13)
 ## Question 10
 *Downsample your data so that you plot daily temperature data for each airport, instead of hourly data.*
 
+```{r}
+weather_ts_date <- weather_ts %>% 
+  group_by_key(
+    origin
+  ) %>% 
+  index_by(
+    date = ~as.date(.)
+  ) %>% 
+  summarise(
+    mean_temp = mean(temp)
+  )
+```
+
+
 ## Question 11
 *Decompose your daily time series data (the downsampled one) using an appopriate downsampling technique. Justify your choice, and explain what the decomposition shows you. Does it tell you anything about the seasonality that you couldn’t see before?*
+
+```{r}
+weather_ts_date %>% 
+  STL(
+    # The seasonality function takes strings as a valid input
+    temp_mean ~ season("6 months")
+  ) %>% 
+  autoplot()
+```
 
 ## Question 12
 *Extract features from your downsampled data. Which airport has the strongest trend?*

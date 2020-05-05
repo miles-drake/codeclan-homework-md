@@ -10,7 +10,12 @@ library(tidyverse)
 
 titanic_set <- read_csv("data/titanic-decision-tree.csv")
 
-# Shuffle the data so class order isn't in order
+# Set random seed for this session
+# Ensures that any written analysis matches the model
+random_seed <- 1L
+set.seed(random_seed)
+
+# Shuffle the data so class order isn't sorted
 # Need this for training/testing split later on
 shuffle_index <- sample(1:nrow(titanic_set))
 titanic_set <- titanic_set[shuffle_index, ]

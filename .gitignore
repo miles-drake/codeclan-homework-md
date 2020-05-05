@@ -1,3 +1,12 @@
+# Microsoft Office 2016
+*.tmp
+~$*.doc*
+Backup of *.doc*
+~$*.xls*
+*.xlk
+~$*.ppt*
+*.~vsd*
+
 # shinyapps.io
 # rsconnect plugin
 rsconnect/

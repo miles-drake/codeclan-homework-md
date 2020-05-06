@@ -28,6 +28,8 @@ churn <- read_xlsx("data/telecomms-churn.xlsx") %>%
 
 # Plots -------------------------------------------------------------------
 
+plots_to_export <- NULL
+
 churn_rate_tbl <- function(variable_name){
   variable_name <- as.name(variable_name)
   churn %>% 
@@ -41,6 +43,7 @@ churn_rate_tbl <- function(variable_name){
 }
 
 churn_rate_plot <- function(churn_rate_tbl, variable_name){
+  plots_to_export <<- c(plots_to_export, str_c("plot_churn_rate_", variable_name))
   variable_name <- as.name(variable_name)
   churn_rate_tbl %>% 
     ggplot() + 

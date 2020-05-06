@@ -96,6 +96,19 @@ model_tenure <- glm(
 
 # The Pr(>|z|) of each coefficient is <2e-16, so each coefficient is significant
 
+
+# Data With Single Predictors Attached ------------------------------------
+
+pred_contract <- churn %>% 
+  add_predictions(model_contract, type = "response")
+
+pred_internet_service <- churn %>% 
+  add_predictions(model_internet_service, type = "response")
+
+pred_tenure <- churn %>% 
+  add_predictions(model_tenure, type = "response")
+
+
 # Export Plots ------------------------------------------------------------
 
 plots_to_export <- c(

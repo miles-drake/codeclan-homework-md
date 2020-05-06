@@ -15,9 +15,13 @@ set.seed(random_seed)
 # Import and clean data set
 churn <- read_xlsx("data/telecomms-churn.xlsx") %>% 
   clean_names() %>% 
+  select(-customer_id) %>% 
+  # Coerce senior_citizen into the same format as the rest of the data set
   mutate(
-    senior_citizen = if_else(senior_citizen == 1, TRUE, FALSE)
-  )
+    senior_citizen = if_else(senior_citizen == 1, "Yes", "No")
+  ) %>% 
+  # Coerce character variables into factors
+  mutate_if(is.character, as.factor)
 
 
 # Plots -------------------------------------------------------------------
@@ -64,7 +68,9 @@ churn_rate_contract <- churn_rate_tbl("contract")
 plot_churn_rate_contract <- churn_rate_plot(churn_rate_contract, "contract")
 
 # The strong predictors are likely to be the following:
-# 
+# contract, dependents, internet_service, partner, senior_citizen
+# Due to time constraints, continuous variables have not been plotted
+# It is likely some of these continuous variables are also predictors
 
 
 # Export Plots ------------------------------------------------------------

@@ -131,6 +131,17 @@ plot_roc_curves <- ggroc(data = roc_list, legacy.axes = TRUE) +
   coord_fixed()
 
 
+# AUC (Area Under Curve) --------------------------------------------------
+
+# Coerce into vector to remove pre-existing attributes
+auc <- list(
+  contract = as.numeric(auc(roc_contract)),
+  internet_service = as.numeric(auc(roc_internet_service)),
+  tenure = as.numeric(auc(roc_tenure))
+)
+
+# tenure is likely to be the best predictor, with the highest auc value of 0.74
+
 # Export Plots ------------------------------------------------------------
 
 plots_to_export <- c(

@@ -133,7 +133,7 @@ plot_roc_curves <- ggroc(data = roc_list, legacy.axes = TRUE) +
 
 # AUC (Area Under Curve) --------------------------------------------------
 
-# Coerce into vector to remove pre-existing attributes
+# Coerce AUC into a numeric vector to remove pre-existing attributes
 auc <- list(
   contract = as.numeric(auc(roc_contract)),
   internet_service = as.numeric(auc(roc_internet_service)),

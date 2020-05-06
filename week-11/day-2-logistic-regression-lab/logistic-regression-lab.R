@@ -2,6 +2,7 @@
 
 library(janitor)
 library(modelr)
+library(pROC)
 library(readxl)
 library(tidyverse)
 
@@ -109,6 +110,27 @@ pred_tenure <- churn %>%
   add_predictions(model_tenure, type = "response")
 
 
+# ROC Curves --------------------------------------------------------------
+
+roc_contract <- pred_contract %>%
+  roc(response = churn, predictor = pred)
+
+roc_internet_service <- pred_internet_service %>%
+  roc(response = churn, predictor = pred)
+
+roc_tenure <- pred_tenure %>%
+  roc(response = churn, predictor = pred)
+
+roc_list <- list(
+  contract = roc_contract,
+  internet_service = roc_internet_service,
+  tenure = roc_tenure
+)
+
+plot_roc_curves <- ggroc(data = roc_list, legacy.axes = TRUE) + 
+  coord_fixed()
+
+
 # Export Plots ------------------------------------------------------------
 
 plots_to_export <- c(
@@ -118,7 +140,8 @@ plots_to_export <- c(
   "plot_churn_rate_internet_service",
   "plot_churn_rate_partner",
   "plot_churn_rate_phone_service",
-  "plot_churn_rate_senior_citizen"
+  "plot_churn_rate_senior_citizen",
+  "plot_roc_curves"
 )
 
 if(export_plots){

@@ -14,9 +14,10 @@ plots_to_export <- c(
 for(element in plots_to_export){
   
   file_name <- element %>% 
-    str_c(".png") %>% 
     str_to_lower() %>% 
-    str_replace_all("_", "-")
+    str_replace("plot_", "") %>% 
+    str_replace_all("_", "-") %>% 
+    str_c(".png")
   
   ggsave(
     filename = file_name,

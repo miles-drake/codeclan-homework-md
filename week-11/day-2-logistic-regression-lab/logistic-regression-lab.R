@@ -1,6 +1,7 @@
 # Required Libraries ------------------------------------------------------
 
 library(janitor)
+library(modelr)
 library(readxl)
 library(tidyverse)
 
@@ -72,6 +73,28 @@ plot_churn_rate_contract <- churn_rate_plot(churn_rate_contract, "contract")
 # Due to time constraints, continuous variables have not been plotted
 # It is likely some of these continuous variables are also predictors
 
+
+# Logistic Regression Models ----------------------------------------------
+
+model_contract <- glm(
+  formula = churn ~ contract,
+  data = churn,
+  family = binomial(link = 'logit')
+)
+
+model_internet_service <- glm(
+  formula = churn ~ internet_service,
+  data = churn,
+  family = binomial(link = 'logit')
+)
+
+model_tenure <- glm(
+  formula = churn ~ tenure,
+  data = churn,
+  family = binomial(link = 'logit')
+)
+
+# The Pr(>|z|) of each coefficient is <2e-16, so each coefficient is significant
 
 # Export Plots ------------------------------------------------------------
 

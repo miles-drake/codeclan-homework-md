@@ -8,6 +8,7 @@ library(janitor)
 library(tidyverse)
 
 # Set random seed for this session
+# Ensures that results are reproducable; *only* for the sake of analysis
 set.seed(1L)
 
 
@@ -57,6 +58,7 @@ arrests %>%
   geom_smooth()
 
 # ggpairs generalised pairs plot
+# TODO Not presently useful, or functional
 arrests %>% 
   select(-state) %>% 
   ggpairs()

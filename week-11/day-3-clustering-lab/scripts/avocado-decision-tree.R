@@ -6,8 +6,8 @@ library(rpart.plot)
 library(tidyverse)
 
 # Set random seed for this session
-random_seed <- 1L
-set.seed(random_seed)
+# Ensures that results are reproducable; *only* for the sake of analysis
+set.seed(1L)
 
 
 # Load and Clean Data -----------------------------------------------------

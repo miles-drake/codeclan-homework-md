@@ -3,6 +3,7 @@
 library(cluster)
 library(dendextend)
 library(factoextra)
+library(GGally)
 library(janitor)
 library(tidyverse)
 
@@ -20,8 +21,8 @@ arrests <- USArrests %>%
   rename(state = usps_abr) %>% 
   # Standardise the variables, otherwise assault will overshadow all other charges
   mutate_if(is.numeric, scale) %>% 
-  # A new variable, crime_factor, contains the average standardised crime rate
-  mutate(crime_factor = (assault + murder + rape) / 3)
+  # A new variable, crime_factor, contains the average standardised arrest rate
+  mutate(avg_factor = (assault + murder + rape) / 3)
 
 
 # Preliminary Analysis ----------------------------------------------------
@@ -45,13 +46,21 @@ arrests %>%
 # Plot of all states against average crime factor
 arrests %>% 
   ggplot() + 
-  aes(x = state, y = crime_factor) + 
+  aes(x = state, y = avg_factor) + 
   geom_point()
 
 # Plot of urban population against average crime factor
 arrests %>% 
   ggplot() + 
-  aes(x = urban_pop, y = crime_factor) + 
+  aes(x = urban_pop, y = avg_factor) + 
   geom_point() + 
   geom_smooth()
+
+# ggpairs generalised pairs plot
+arrests %>% 
+  select(-state) %>% 
+  ggpairs()
+
+# Clustering may not be appropriate
+# There does not appear to be a significant amount of separation or distinct grouping
 

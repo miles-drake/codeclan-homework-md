@@ -71,11 +71,25 @@ arrests %>%
 
 # Chosen method is the "elbow method"
 
-fviz_nbclust(arrests, FUN = hcut, method = "wss")
+arrests %>% 
+  select(-state) %>% 
+  fviz_nbclust(FUNcluster = kmeans, method = "wss")
 
 # There is a slight change in the rate of decrease at k = 4, so we choose k = 4
 
 
 # Create Clusters ---------------------------------------------------------
 
+clustered_arrests <- arrests %>% 
+  select(-state) %>% 
+  kmeans(centers = 4, nstart = 25)
 
+
+# Visualisation -----------------------------------------------------------
+
+# Visualise on more than k = 2 clusters with fviz_cluster()
+
+clustered_arrests %>% 
+  fviz_cluster(
+    data = arrests %>% select(-state)
+  )

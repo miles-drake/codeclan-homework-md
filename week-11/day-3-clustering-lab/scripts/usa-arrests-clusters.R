@@ -66,3 +66,16 @@ arrests %>%
 # Clustering may not be appropriate
 # There does not appear to be a significant amount of separation or distinct grouping
 
+
+# Choosing a Value for k --------------------------------------------------
+
+# Chosen method is the "elbow method"
+
+fviz_nbclust(arrests, FUN = hcut, method = "wss")
+
+# There is a slight change in the rate of decrease at k = 4, so we choose k = 4
+
+
+# Create Clusters ---------------------------------------------------------
+
+

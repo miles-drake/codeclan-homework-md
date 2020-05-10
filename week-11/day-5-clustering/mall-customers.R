@@ -44,6 +44,9 @@ scatterplot <- mallrats %>%
   ) + 
   geom_point()
 
+# We can see at least five distinct clusters in the scatterplot
+
+
 # Choosing a Value for k --------------------------------------------------
 
 plot_optimal_k_value <- fviz_nbclust(mallrats, kmeans, method = "wss")

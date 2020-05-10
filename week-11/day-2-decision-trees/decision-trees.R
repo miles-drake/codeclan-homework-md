@@ -29,7 +29,7 @@ titanic_set <- titanic_set[shuffle_index, ]
 # port_embarkation: C = Cherbourg, Q = Queenstown, S = Southampton
 # sibsp : number of siblings / spouses aboard the Titanic
 # parch: number of parents / children aboard the Titanic
-#   Some children travelled only with a nanny, therefore parch = 0 for them
+# - Some children travelled only with a nanny, therefore parch = 0 for them
 # survived_flag : did they survive, 0 = No, 1 = Yes
 
 

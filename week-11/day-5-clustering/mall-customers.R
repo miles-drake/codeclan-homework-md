@@ -63,7 +63,7 @@ clustered_data <- kmeans(mallrats, centers = k, nstart = 25)
 
 # Visualise clustered data ------------------------------------------------
 
-plot_clustered_data <- clustered_data %>% 
+plot_clustered_data_k4 <- clustered_data %>% 
   fviz_cluster(
     data = mallrats,
     geom = "point",
@@ -75,8 +75,8 @@ plot_clustered_data <- clustered_data %>%
 
 # Final analysis ----------------------------------------------------------
 
-# The clustering seems to be a good fit for this data, with no observed outliers
-# A fifth cluster would probably be a good addition, to capture average income, average spend shoppers
+# The clustering seems to be a good fit for this data, with no observed outliers.
+# A fifth cluster would probably be a good addition, to capture average income, average spend shoppers.
 
 clustered_data_k5 <- kmeans(mallrats, centers = k + 1, nstart = 25)
 
@@ -88,3 +88,16 @@ plot_clustered_data_k5 <- clustered_data_k5 %>%
     xlab = "Annual income",
     ylab = "Spending score"
   )
+
+# We see five clusters, in reasonable groupings:
+# Low income, high spend;
+# Low income, low spend;
+# High income, high spend;
+# High income, low spend;
+# Average income, average spend.
+
+# Note that there are not enough data points to justify the creation of additional clusters,
+# such as average income, high spend; or average income, low spend.
+# Shoppers with average income have an average spend.
+
+# A good campaign would target both low- and high-income shoppers.

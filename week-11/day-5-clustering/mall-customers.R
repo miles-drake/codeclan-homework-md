@@ -23,3 +23,29 @@ mallrats <- read_csv("mall-customers.csv") %>%
   mutate(gender = as.factor(gender)) %>% 
   # Scale the numeric columns, because they have very different numerical values and units
   mutate_if(is.numeric, scale)
+
+# Reduce Data Set ---------------------------------------------------------
+
+# Reduce the data set down into annual income and spending power only
+
+mallrats <- mallrats %>% 
+  select(annual_income, spending_score)
+
+# Preliminary Analysis ----------------------------------------------------
+
+scatterplot <- mallrats %>% 
+  ggplot() + 
+  aes(x = annual_income, y = spending_score) + 
+  labs(
+    title = "Shoppers' annual income against derived spending score",
+    subtitle = "Shopping centre customer data",
+    x = "Annual income",
+    y = "Spending score"
+  ) + 
+  geom_point()
+
+# Choosing a Value for k --------------------------------------------------
+
+plot_optimal_k_value <- fviz_nbclust(mallrats, kmeans, method = "wss")
+
+# We choose k = 4, where there is a slight change in the gradient of the graph

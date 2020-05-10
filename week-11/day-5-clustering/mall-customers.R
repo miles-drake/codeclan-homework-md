@@ -5,10 +5,6 @@ library(factoextra)
 library(janitor)
 library(tidyverse)
 
-# Set random seed for this session
-# Ensures that results are reproducable; *only* for the sake of analysis
-set.seed(1L)
-
 
 # Load and clean data -----------------------------------------------------
 

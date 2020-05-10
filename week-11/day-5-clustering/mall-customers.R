@@ -77,3 +77,14 @@ plot_clustered_data <- clustered_data %>%
 
 # The clustering seems to be a good fit for this data, with no observed outliers
 # A fifth cluster would probably be a good addition, to capture average income, average spend shoppers
+
+clustered_data_k5 <- kmeans(mallrats, centers = k + 1, nstart = 25)
+
+plot_clustered_data_k5 <- clustered_data_k5 %>% 
+  fviz_cluster(
+    data = mallrats,
+    geom = "point",
+    main = "Cluster plot of shoppers' annual income against derived spending score",
+    xlab = "Annual income",
+    ylab = "Spending score"
+  )

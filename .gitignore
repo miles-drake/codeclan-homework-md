@@ -1,18 +1,25 @@
-# Microsoft Office 2016
-*.tmp
-~$*.doc*
-Backup of *.doc*
-~$*.xls*
-*.xlk
-~$*.ppt*
-*.~vsd*
-
+# Manually added rules ----------------------------------------------------
 # shinyapps.io
 # rsconnect plugin
 rsconnect/
 
-# Created by https://www.gitignore.io/api/r,linux,macos,python,windows
-# Edit at https://www.gitignore.io/?templates=r,linux,macos,python,windows
+# Automatically generated rules -------------------------------------------
+# Created by https://www.gitignore.io/api/r,linux,macos,python,windows,microsoftoffice,jupyternotebooks
+# Edit at https://www.gitignore.io/?templates=r,linux,macos,python,windows,microsoftoffice,jupyternotebooks
+
+### JupyterNotebooks ###
+# gitignore template for Jupyter Notebooks
+# website: http://jupyter.org/
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
 
 ### Linux ###
 *~
@@ -56,6 +63,27 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+### MicrosoftOffice ###
+*.tmp
+
+# Word temporary
+~$*.doc*
+
+# Word Auto Backup File
+Backup of *.doc*
+
+# Excel temporary
+~$*.xls*
+
+# Excel Backup File
+*.xlk
+
+# PowerPoint temporary
+~$*.ppt*
+
+# Visio autosave temporary files
+*.~vsd*
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -231,4 +259,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/r,linux,macos,python,windows
+# End of https://www.gitignore.io/api/r,linux,macos,python,windows,microsoftoffice,jupyternotebooks
